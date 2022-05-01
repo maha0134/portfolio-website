@@ -20,7 +20,6 @@
   <body>
     <!-- Skip Links -->
     <ul class="skip-links">
-      <li><a href="#nav">Skip to navigation</a></li>
       <li><a href="#main">Skip to main</a></li>
       <li><a href="#home">Skip to home</a></li>
       <li><a href="#about">Skip to about</a></li>
@@ -29,9 +28,11 @@
       <li><a href="#foot">Skip to footer</a></li>
     </ul>
     <main id="main" tabindex="0">
-      <div class="nav"></div>
-      <aside id="nav">
-        <div class="backbone">
+      <div class="nav" id="ham">
+        <i class="material-icons-round"> menu </i>
+      </div>
+      <aside>
+        <div class="backbone" id="backbone" tabindex="0">
           <a href="#home">
             <div class="home-dot dots filled" data-desc="Home"></div>
           </a>

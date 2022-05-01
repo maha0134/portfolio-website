@@ -1,3 +1,18 @@
+.nav {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.75s linear;
+  i {
+    font-size: 48px;
+  }
+  @media only screen and (min-width: 40em) {
+    opacity: 0;
+    display: none;
+  }
+}
 //side icon navigation from Tablet size onwards
 @media only screen and (min-width: 40em) {
   aside {

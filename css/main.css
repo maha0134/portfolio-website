@@ -156,6 +156,24 @@
     opacity: 0;
   }
 }
+.nav {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.75s linear;
+}
+.nav i {
+  font-size: 48px;
+}
+@media only screen and (min-width: 40em) {
+  .nav {
+    opacity: 0;
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 40em) {
   aside {
     position: absolute;
