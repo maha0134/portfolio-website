@@ -1,0 +1,71 @@
+.list-unstyled {
+  @include list;
+}
+
+.styled-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Type Hierarchy
+
+p {
+  font-size: 1.2rem;
+}
+
+h1 {
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 2.482rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.602rem;
+}
+
+h3 {
+  font-size: 1.424rem;
+}
+
+h4 {
+  font-size: 1.266rem;
+}
+.name {
+  background-image: linear-gradient(
+    to right,
+    $color-accent,
+    $color-accent-light
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+//Tablet and Desktop view
+@media only screen and (min-width: 40em) {
+  p {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 4.209rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 3.157rem;
+  }
+
+  h3 {
+    font-size: 2.369rem;
+  }
+
+  h4 {
+    font-size: 1.777rem;
+  }
+}

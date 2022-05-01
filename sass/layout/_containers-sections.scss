@@ -1,0 +1,48 @@
+.container-outer {
+  max-width: min(45em, 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.container-inner {
+  max-width: min(45em, 100%);
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.home {
+  min-height: 100vh;
+  background-color: $color-background;
+  color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .name {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10rem);
+    animation: slide-up 0.75s 0.75s ease-in forwards,
+      bounce linear infinite 2s 2s;
+    display: inline-block;
+    transform: translate(0, 0);
+  }
+  .desig {
+    opacity: 0;
+    transform: translateX(-20rem);
+    animation: slide-right linear 1s 1.5s forwards;
+    display: flex;
+    align-self: flex-end;
+    text-align: right;
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+.illustrator,
+.css,
+.html {
+  height: 3rem;
+  width: 3rem;
+  opacity: 0.5;
+}

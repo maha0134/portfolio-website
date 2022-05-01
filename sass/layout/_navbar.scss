@@ -1,0 +1,55 @@
+//side icon navigation from Tablet size onwards
+@media only screen and (min-width: 40em) {
+  aside {
+    position: absolute;
+    top: 1rem;
+    font-size: 1.5rem;
+    left: 2rem;
+    .backbone {
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      justify-content: center;
+      width: 0.5px;
+      height: 95vh;
+      background-color: $color-primary-light;
+      gap: calc(100vh / 6);
+      .dots {
+        position: absolute;
+        border-radius: 50%;
+        border: solid 2.5px $color-accent;
+        background-color: $color-background;
+        height: 1.5rem;
+        width: 1.5rem;
+        left: -0.65rem;
+        &.filled {
+          background-color: $color-accent;
+        }
+      }
+    }
+
+    .home-dot::after,
+    .about-dot::after,
+    .portfolio-dot::after,
+    .contact-dot::after {
+      opacity: 0;
+    }
+
+    .home-dot:hover::after,
+    .home-dot:focus::after,
+    .about-dot:hover::after,
+    .about-dot:focus::after,
+    .portfolio-dot:hover::after,
+    .portfolio-dot:focus::after,
+    .contact-dot:hover::after,
+    .contact-dot:focus::after {
+      position: absolute;
+      content: attr(data-desc);
+      top: -0.5rem;
+      left: 2rem;
+      color: $color-primary;
+      opacity: 1;
+      transition: opacity 0.35s linear;
+    }
+  }
+}

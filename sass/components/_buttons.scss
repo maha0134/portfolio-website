@@ -1,0 +1,55 @@
+.btn-show {
+  border-radius: 5rem;
+  border: solid 2px steelblue;
+  color: steelblue;
+  padding: 0.15em 0.75em;
+  font-weight: bold;
+}
+
+.btn {
+  border-radius: 5rem;
+  border: solid 2px $color-secondary;
+  padding: 0.35em 1.25em 0.35em;
+  color: $color-primary;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+// Transitions
+
+.btn:hover,
+.btn:focus {
+  background-color: $color-secondary;
+  color: $color-primary;
+  border-color: $color-primary;
+}
+
+//icons
+
+.material-icons-outlined.md-32 {
+  font-size: 32px;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+  align-self: flex-end;
+  // margin-right: 2rem;
+  animation: appear linear 1s 2.5s forwards;
+  opacity: 0;
+  a {
+    text-decoration: none;
+    display: flex;
+  }
+  i {
+    @media only screen and (min-width: 40em) {
+      width: 2rem;
+      height: 2rem;
+    }
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px $color-primary solid;
+    svg {
+      background-color: $color-primary;
+    }
+  }
+}

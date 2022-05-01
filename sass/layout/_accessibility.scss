@@ -1,0 +1,20 @@
+// skip links
+
+.skip-links {
+  @include list;
+
+  a {
+    @include anchors;
+    position: absolute;
+    width: 100%;
+    background-color: $color-secondary;
+    top: -200rem;
+    z-index: 1000;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  a:focus {
+    top: 0;
+  }
+}
