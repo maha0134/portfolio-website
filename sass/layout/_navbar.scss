@@ -2,15 +2,60 @@
   position: absolute;
   right: 1rem;
   top: 1rem;
-  color: #fff;
-  opacity: 1;
-  transition: opacity 0.75s linear;
+  display: flex;
   i {
+    display: flex;
+    color: $color-accent;
+    opacity: 1;
+    transition: opacity 0.75s linear;
     font-size: 48px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  .navigation {
+    display: none;
+    transform: translateY(-100rem);
+    opacity: 0;
+  }
+  &.clicked {
+    background-color: $color-background-light;
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    i {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+    .navigation {
+      display: flex;
+      color: $color-background;
+      transform: translateY(0);
+      opacity: 1;
+      width: 100%;
+      .list-unstyled {
+        display: flex;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: bold;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        a {
+          color: $color-accent;
+        }
+      }
+    }
   }
   @media only screen and (min-width: 40em) {
     opacity: 0;
-    display: none;
+    transform: translateY(-100rem);
   }
 }
 //side icon navigation from Tablet size onwards

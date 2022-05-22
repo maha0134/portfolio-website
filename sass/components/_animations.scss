@@ -57,7 +57,27 @@
   20% {
     opacity: 0;
   }
+  30% {
+    opacity: 1;
+  }
   100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100rem);
     opacity: 0;
+    height: 0;
+  }
+  15% {
+    transform: translateY(0rem);
+    opacity: 1;
+    height: 100vh;
+  }
+  100% {
+    transform: translateY(-100rem);
+    opacity: 0;
+    height: 0vh;
   }
 }

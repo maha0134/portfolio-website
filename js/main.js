@@ -1,5 +1,8 @@
 const APP = {
   init: () => {
+    // document.querySelector(".loader").addEventListener("animationend", () => {
+    //   document.querySelector(".loader").classList.add("completed");
+    // });
     document.getElementById("ham").addEventListener("click", APP.hamClicked);
     document
       .getElementById("backbone")
