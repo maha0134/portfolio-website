@@ -1,27 +1,38 @@
 const APP = {
   init: () => {
-    // document.querySelector(".loader").addEventListener("animationend", () => {
-    //   document.querySelector(".loader").classList.add("completed");
-    // });
+    document.querySelector(".icons").addEventListener("animationend", () => {
+      document.body.classList.remove("no-scroll");
+    });
     document.getElementById("ham").addEventListener("click", APP.hamClicked);
-    document
-      .getElementById("backbone")
-      .addEventListener("click", APP.dotClicked);
+    document.addEventListener("scroll", APP.scroll);
   },
   hamClicked: (event) => {
     const nav = event.currentTarget;
     nav.classList.toggle("clicked");
     if (nav.classList.contains("clicked")) {
       nav.firstElementChild.textContent = "close";
+      document.body.classList.add("blur");
     } else {
+      document.body.classList.remove("blur");
       nav.firstElementChild.textContent = "menu";
     }
   },
-  dotClicked: (event) => {
-    const dot = event.target.closest(".dots");
-    if (dot) {
-      event.currentTarget.querySelector(".filled").classList.remove("filled");
-      dot.classList.add("filled");
+  scroll: () => {
+    const nav = document.querySelector(".nav");
+    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+      nav.classList.add("sticky-nav");
+    } // else {
+    //   if (nav.classList.contains("sticky-nav")) {
+    //     nav.classList.remove("sticky-nav");
+    //   }
+    // }
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      document.querySelector(".home").classList.add("scrolled");
+    } else {
+      document.querySelector(".home").classList.remove("scrolled");
     }
   },
 };

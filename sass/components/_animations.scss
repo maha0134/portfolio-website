@@ -18,7 +18,7 @@
 
 @keyframes slide-up {
   from {
-    transform: translateY(10rem);
+    transform: translateY(5rem);
     opacity: 0;
   }
   to {
@@ -37,47 +37,75 @@
     opacity: 1;
   }
 }
-
+//loader
 @keyframes appear {
-  from {
-    opacity: 0;
+  0% {
+    opacity: 1;
+    height: 100vh;
   }
-  to {
+  15% {
+    opacity: 1;
+    height: 100vh;
+  }
+  90% {
+    height: 100vh;
     opacity: 1;
   }
+  100% {
+    // opacity: 0;
+    height: 0;
+  }
 }
-
+//loader logo
 @keyframes blink {
   0% {
     opacity: 0;
   }
   10% {
-    opacity: 1;
+    opacity: 0.3;
   }
   20% {
     opacity: 0;
   }
   30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
     opacity: 1;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 @keyframes slide-down {
   0% {
-    transform: translateY(-100rem);
+    transform: translateY(-100vh);
     opacity: 0;
     height: 0;
   }
   15% {
-    transform: translateY(0rem);
+    transform: translateY(0);
     opacity: 1;
     height: 100vh;
+    position: absolute;
+    z-index: 1;
   }
-  100% {
-    transform: translateY(-100rem);
+  // 100% {
+  //   transform: translateY(-100vh);
+  //   opacity: 0;
+  // }
+}
+@keyframes icons {
+  from {
     opacity: 0;
-    height: 0vh;
+  }
+  to {
+    opacity: 1;
   }
 }

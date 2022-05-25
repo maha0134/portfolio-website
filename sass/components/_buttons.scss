@@ -29,12 +29,13 @@
   font-size: 32px;
 }
 
+//social media icons
 .icons {
   display: flex;
   gap: 1rem;
   align-self: flex-end;
   // margin-right: 2rem;
-  animation: appear linear 1s 5s forwards;
+  animation: icons linear 1s 5s forwards;
   opacity: 0;
   a {
     text-decoration: none;

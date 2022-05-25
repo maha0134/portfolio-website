@@ -44,6 +44,22 @@
   gap: 2rem;
 }
 
+.card-container {
+  display: flex;
+  gap: 2rem;
+}
+.card-container .card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  box-shadow: 2px 2px 2px;
+  width: min(100%, 20rem);
+}
+.card-container .card .material-icons-outlined {
+  margin-top: -1rem;
+  z-index: 1;
+}
+
 .btn-show {
   border-radius: 5rem;
   border: solid 2px steelblue;
@@ -75,7 +91,7 @@
   display: flex;
   gap: 1rem;
   align-self: flex-end;
-  animation: appear linear 1s 5s forwards;
+  animation: icons linear 1s 5s forwards;
   opacity: 0;
 }
 .icons a {
@@ -116,7 +132,7 @@
 }
 @keyframes slide-up {
   from {
-    transform: translateY(10rem);
+    transform: translateY(5rem);
     opacity: 0;
   }
   to {
@@ -135,11 +151,20 @@
   }
 }
 @keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
+  0% {
     opacity: 1;
+    height: 100vh;
+  }
+  15% {
+    opacity: 1;
+    height: 100vh;
+  }
+  90% {
+    height: 100vh;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
   }
 }
 @keyframes blink {
@@ -147,75 +172,94 @@
     opacity: 0;
   }
   10% {
-    opacity: 1;
+    opacity: 0.3;
   }
   20% {
     opacity: 0;
   }
   30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
     opacity: 1;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 @keyframes slide-down {
   0% {
-    transform: translateY(-100rem);
+    transform: translateY(-100vh);
     opacity: 0;
     height: 0;
   }
   15% {
-    transform: translateY(0rem);
+    transform: translateY(0);
     opacity: 1;
     height: 100vh;
+    position: absolute;
+    z-index: 1;
   }
-  100% {
-    transform: translateY(-100rem);
+}
+@keyframes icons {
+  from {
     opacity: 0;
-    height: 0vh;
+  }
+  to {
+    opacity: 1;
   }
 }
 .nav {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  display: flex;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 100;
 }
 .nav i {
-  display: flex;
   color: #f64a80;
-  opacity: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem 0;
   transition: opacity 0.75s linear;
   font-size: 48px;
+  line-height: 1;
 }
 .nav:hover {
   cursor: pointer;
 }
 .nav .navigation {
-  display: none;
-  transform: translateY(-100rem);
+  transform: translateX(100vw);
+  transition: opacity 0.75s linear;
   opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 .nav.clicked {
+  opacity: 1;
   background-color: #121212;
   display: flex;
-  position: absolute;
-  z-index: 1000;
+  gap: 0;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-}
-.nav.clicked i {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+  height: 100vh;
+  width: 90vw;
 }
 .nav.clicked .navigation {
   display: flex;
-  color: black;
-  transform: translateY(0);
+  flex: 1;
+  color: #f64a80;
+  transform: translateX(0vw);
   opacity: 1;
   width: 100%;
 }
@@ -234,63 +278,58 @@
 }
 @media only screen and (min-width: 40em) {
   .nav {
+    transition: all 0.5s linear;
     opacity: 0;
-    transform: translateY(-100rem);
+    display: flex;
+    width: 100%;
+    transform: translateY(-100%);
+    height: 0;
+    overflow: hidden;
+  }
+  .nav .navigation {
+    transform: translateX(0vw);
+    display: flex;
+    transition: all 0.5s linear;
+    background-color: black;
+    padding: 1.5rem 4rem;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .nav .navigation .list-unstyled {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav .navigation .list-unstyled a {
+    display: inline-block;
+    transition: transform 0.25s linear;
+  }
+  .nav .navigation .list-unstyled a:hover {
+    color: #f64a80;
+    transform: scale(1.1);
+  }
+  .nav i {
+    font-size: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  .nav.sticky-nav {
+    opacity: 1;
+    transform: translateY(0%);
+    z-index: 1000;
+    overflow: visible;
+    justify-content: flex-end;
+  }
+  .nav.sticky-nav .navigation {
+    height: 4.5rem;
+    position: fixed;
+    opacity: 1;
+    overflow: visible;
   }
 }
 
-@media only screen and (min-width: 40em) {
-  aside {
-    position: absolute;
-    top: 1rem;
-    font-size: 1.5rem;
-    left: 2rem;
-  }
-  aside .backbone {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    justify-content: center;
-    width: 0.5px;
-    height: 95vh;
-    background-color: rgba(255, 255, 255, 0.272);
-    gap: 16.6666666667vh;
-  }
-  aside .backbone .dots {
-    position: absolute;
-    border-radius: 50%;
-    border: solid 2.5px #f64a80;
-    background-color: black;
-    height: 1.5rem;
-    width: 1.5rem;
-    left: -0.65rem;
-  }
-  aside .backbone .dots.filled {
-    background-color: #f64a80;
-  }
-  aside .home-dot::after,
-aside .about-dot::after,
-aside .portfolio-dot::after,
-aside .contact-dot::after {
-    opacity: 0;
-  }
-  aside .home-dot:hover::after,
-aside .home-dot:focus::after,
-aside .about-dot:hover::after,
-aside .about-dot:focus::after,
-aside .portfolio-dot:hover::after,
-aside .portfolio-dot:focus::after,
-aside .contact-dot:hover::after,
-aside .contact-dot:focus::after {
-    position: absolute;
-    content: attr(data-desc);
-    top: -0.5rem;
-    left: 2rem;
-    color: white;
-    opacity: 1;
-    transition: opacity 0.35s linear;
-  }
-}
 .skip-links {
   list-style: none;
   margin: 0;
@@ -324,6 +363,9 @@ html {
 
 body {
   margin: 0;
+  background-color: black;
+  transition: font-size 0.75s linear;
+  scroll-snap-type: y mandatory;
 }
 
 img {
@@ -348,54 +390,93 @@ svg {
 }
 
 main {
-  background-color: black;
+  scroll-snap-type: y mandatory;
 }
 
-section:not(nth-last-of-type) {
+.blur {
+  overflow: hidden;
+}
+@media only screen and (min-width: 40em) {
+  .blur {
+    overflow: scroll;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+section {
   min-height: 100vh;
   color: white;
+  scroll-snap-align: start;
 }
 
 .loader {
   display: flex;
-  background-color: #f64a80;
-  transform: translateY(-100rem);
-  opacity: 0;
-  height: 0vh;
-  animation: slide-down 15s 0.5s linear forwards;
+  background-color: black;
+  opacity: 1;
+  height: 100vh;
+  animation: appear 3.5s 0.5s linear forwards;
   justify-content: center;
   align-items: center;
 }
 .loader i {
   opacity: 0;
-  animation: blink 1s 3s linear 1;
+  animation: blink 3s 1s linear forwards;
 }
 .loader i svg {
-  height: 10rem;
-  width: 10rem;
+  height: 6rem;
+  width: 6rem;
+}
+@media only screen and (min-width: 40em) {
+  .loader i svg {
+    height: 10rem;
+    width: 10rem;
+  }
 }
 
 .home {
+  transform: translateY(0);
+  transition: all 0.5s linear;
   display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/background-phone.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+@media only screen and (min-width: 40em) {
+  .home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/background.png");
+  }
+}
 .home .name {
   display: inline-block;
   opacity: 0;
-  transform: translateY(10rem);
-  animation: slide-up 0.75s 6s ease-in forwards, bounce linear infinite 2s;
+  transform: translateY(5rem);
+  animation: slide-up 0.75s 4s ease-in forwards, bounce linear infinite 2s;
   display: inline-block;
 }
 .home .desig {
   opacity: 0;
   transform: translateX(-20rem);
-  animation: slide-right linear 1s 6.5s forwards;
+  animation: slide-right linear 1s 4.5s forwards;
   display: flex;
   align-self: flex-end;
   text-align: right;
   font-family: "JetBrains Mono", monospace;
+}
+.home .shadow {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(255, 255, 255, 0.076);
 }
 
 .illustrator,
@@ -434,7 +515,7 @@ p {
 }
 
 h1 {
-  margin: 0 auto;
+  margin: 0.75rem auto 0;
   display: inline-block;
   font-size: 2.482rem;
   text-align: center;
@@ -466,7 +547,7 @@ h4 {
 
   h1 {
     font-size: 4.209rem;
-    margin: 0;
+    margin: 1.5rem auto 0;
   }
 
   h2 {

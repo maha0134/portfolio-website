@@ -11,51 +11,94 @@
   padding: 1.5rem;
 }
 main {
-  background-color: $color-background;
+  // padding: 0;
+  scroll-snap-type: y mandatory;
+  // height: 100%;
+  // width: 100%;
+  // overflow-y: scroll;
 }
-section:not(nth-last-of-type) {
+.blur {
+  overflow: hidden;
+  @media only screen and (min-width: 40em) {
+    overflow: scroll;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+section {
   min-height: 100vh;
   color: $color-primary;
+  scroll-snap-align: start;
 }
 .loader {
   display: flex;
-  background-color: $color-accent;
-  transform: translateY(-100rem);
-  opacity: 0;
-  height: 0vh;
-  animation: slide-down 15s 0.5s linear forwards;
+  background-color: $color-background;
+  opacity: 1;
+  height: 100vh;
+  animation: appear 3.5s 0.5s linear forwards;
   justify-content: center;
   align-items: center;
   i {
     opacity: 0;
-    animation: blink 1s 3s linear 1;
+    animation: blink 3s 1s linear forwards;
     svg {
-      height: 10rem;
-      width: 10rem;
+      height: 6rem;
+      width: 6rem;
+      @media only screen and (min-width: 40em) {
+        height: 10rem;
+        width: 10rem;
+      }
     }
   }
 }
 .home {
+  transform: translateY(0);
+  transition: all 0.5s linear;
   display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../images/background-phone.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media only screen and (min-width: 40em) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../../images/background.png");
+  }
   .name {
     display: inline-block;
     opacity: 0;
-    transform: translateY(10rem);
-    animation: slide-up 0.75s 6s ease-in forwards, bounce linear infinite 2s;
+    transform: translateY(5rem);
+    animation: slide-up 0.75s 4s ease-in forwards, bounce linear infinite 2s;
     display: inline-block;
   }
   .desig {
     opacity: 0;
     transform: translateX(-20rem);
-    animation: slide-right linear 1s 6.5s forwards;
+    animation: slide-right linear 1s 4.5s forwards;
     display: flex;
     align-self: flex-end;
     text-align: right;
     font-family: "JetBrains Mono", monospace;
   }
+  .shadow {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.035);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 1px solid rgba(255, 255, 255, 0.076);
+  }
+  // &.scrolled {
+  //   transform: translateY(-100vh);
+  //   height: 0;
+  // }
 }
 
 .illustrator,
