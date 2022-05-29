@@ -1,10 +1,12 @@
 $color-primary: hsl(0, 0%, 100%);
 $color-primary-light: hsla(0, 0%, 100%, 0.272);
+$color-primary-clear: hsla(0, 0%, 96%, 0.645);
 $color-background: hsl(0, 0%, 0%);
 $color-background-light: hsl(0, 0%, 7%);
 $color-secondary: rgb(0, 251, 255);
-$color-white: white;
-$color-black: black;
+$color-secondary-light: rgb(0, 251, 255);
+$color-secondary-dark: rgb(0, 100, 101);
+
 $color-accent: rgb(246, 74, 128);
 // $color-accent: cyan;
 $color-accent-light: rgb(255, 156, 187);

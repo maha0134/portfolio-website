@@ -15,6 +15,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#000000" />
     <title>Akshay Mahajan</title>
   </head>
   <body class="no-scroll">
@@ -68,8 +75,8 @@
         </svg>
       </i>
     </div>
-    <header class="nav" id="ham">
-      <i class="material-icons-round"> menu </i>
+    <header class="nav">
+      <i class="material-icons-round" id="ham"> menu </i>
       <div class="navigation">
         <ul class="list-unstyled">
           <li><a href="#home">Home</a></li>
@@ -79,9 +86,9 @@
         </ul>
       </div>
     </header>
-    <main id="main" tabindex="0">
+    <main class="" id="main" tabindex="0">
       <section class="home" id="home">
-        <div class="container-outer shadow">
+        <div class="container-inner shadow">
           <h1 class="name">Akshay Mahajan</h1>
           <h4 class="desig">Full Stack Developer</h4>
           <div class="icons">
@@ -122,35 +129,60 @@
         </div>
       </section>
       <section class="about" id="about">
-        <p class="h2">
-          Hi! My name is Akshay Mahajan and I love to solve problems.
-        </p>
-        <p>I am a Full Stack Web and Mobile Applications Developer.</p>
-        <h4>Things I can do</h4>
-        <div class="card-container container-inner">
+        <div class="container-outer text-part">
+          <p class="h2">
+            Hi! My name is <span class="accent">Akshay Mahajan</span> and I love
+            to solve problems.
+          </p>
+          <p>
+            I am a Full Stack Web and Mobile Applications Developer and a UI
+            Designer.
+          </p>
+        </div>
+        <div class="card-container container-outer">
           <div class="card">
-            <i>
-              <span class="material-icons-outlined md-32"> devices </span>
-            </i>
-            <p>Responsive Websites</p>
-            <p>
-              I create responsive websites that work well with browsers across
-              various mobile, tablet and desktops sizes.
+            <i class="material-icons-outlined"> devices </i>
+            <p class="labels">Responsive Websites</p>
+            <p class="invisible">
+              I can create responsive websites that work well with browsers
+              across mobile, tablet and desktop sizes.
             </p>
           </div>
           <div class="card">
-            <i>
-              <span class="material-icons-outlined md-32"> api </span>
-            </i>
-            <p>API Development</p>
-            <p>
-              I have demonstrated experience in API development and working with
-              all CRUD routes.
+            <i class="material-icons-outlined"> api </i>
+            <p class="labels">API Development</p>
+            <p class="invisible">
+              I can develop APIs employing all CRUD routes using Node.js,
+              Express and mongoDB.
+            </p>
+          </div>
+          <div class="card">
+            <span class="cross">
+              <i class="material-icons-outlined"> android </i>
+              <i class="material-icons-outlined"> phone_iphone </i>
+            </span>
+            <p class="labels">Cross Platform Mobile Apps</p>
+            <p class="invisible">
+              I can develop Full Stack cross platform mobile apps using Flutter
+              for the client side and a Node js server.
+            </p>
+          </div>
+          <div class="card">
+            <i class="material-icons-outlined"> draw </i>
+            <p class="labels">UI Designer</p>
+            <p class="invisible">
+              I can design following User Interface Design guidelines, create
+              prototypes, icons and work with raster/vector graphics.
             </p>
           </div>
         </div>
       </section>
-      <section class="portfolio" id="portfolio"></section>
+      <section class="portfolio" id="portfolio">
+        <div class="container-outer">
+          <h3>Projects</h3>
+          <div class="cards-container"></div>
+        </div>
+      </section>
       <section class="contact" id="contact"></section>
       <section class="foot" id="foot"></section>
     </main>

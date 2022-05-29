@@ -1,63 +1,94 @@
-.hero-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../img/banner.jpg);
-  min-height: 50vh;
-  background-position: center;
-  background-size: cover;
-  color: white;
-}
-
-.hero-banner-no-image {
-  background-color: white;
-  min-height: max(22rem, 40vh);
-  padding: 0 1rem;
-  background-position: center;
-  background-size: cover;
-  color: #00fbff;
-}
-@media only screen and (min-width: 45em) {
-  .hero-banner-no-image {
-    padding: 0 2rem;
-  }
-}
-
-.images-inline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-.images-inline .image-inline {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: 20rem;
-}
-@media only screen and (min-width: 50em) {
-  .images-inline .image-inline {
-    flex-basis: 30%;
-  }
-}
-
-.banner-grid {
-  display: grid;
-  gap: 2rem;
-}
-
 .card-container {
   display: flex;
-  gap: 2rem;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 40em) {
+  .card-container {
+    gap: 0;
+  }
+  .card-container.container-outer {
+    max-width: min(70em, 100%);
+  }
 }
 .card-container .card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid white;
-  box-shadow: 2px 2px 2px;
-  width: min(100%, 20rem);
+  opacity: 1;
 }
-.card-container .card .material-icons-outlined {
-  margin-top: -1rem;
-  z-index: 1;
+.card-container .card {
+  transition: all 0.75s linear;
+  display: flex;
+  justify-content: center;
+  flex: 0 1 20rem;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.5em;
+  position: relative;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+.card-container .card i,
+.card-container .card .labels {
+  transition: transform 0.5s linear;
+}
+.card-container .card i {
+  animation: bounce 3s linear infinite;
+}
+.card-container .card .invisible {
+  transform: translateY(100%);
+  transition: transform 0.5s linear;
+  opacity: 0;
+  margin: 0;
+  padding: 0.25em;
+  font-size: 1rem;
+  font-family: "JetBrains Mono";
+  position: absolute;
+}
+@media only screen and (min-width: 40em) {
+  .card-container .card .invisible {
+    font-size: 1.5rem;
+  }
+}
+.card-container .card .cross {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+.card-container .card .cross i {
+  display: inline-block;
+  margin: 0;
+}
+.card-container .card:hover {
+  cursor: pointer;
+  background-color: #00fbff;
+  box-shadow: inset #006465 4px 4px 4px, inset #006465 -4px -4px 4px;
+  color: black;
+}
+.card-container .card:hover i,
+.card-container .card:hover .labels {
+  opacity: 0;
+  transform: translateY(-100%);
+  position: absolute;
+}
+.card-container .card:hover .invisible {
+  opacity: 1;
+  position: static;
+  transform: translateY(0);
+}
+@media only screen and (min-width: 47em) {
+  .card-container .card {
+    padding: 1rem;
+    gap: 0.5em;
+  }
+}
+.card-container .card i {
+  font-size: 42px;
+}
+@media only screen and (min-width: 40em) {
+  .card-container .card i {
+    font-size: 56px;
+  }
 }
 
 .btn-show {
@@ -152,19 +183,16 @@
 }
 @keyframes appear {
   0% {
+    transform: translateY(0);
     opacity: 1;
-    height: 100vh;
-  }
-  15% {
-    opacity: 1;
-    height: 100vh;
   }
   90% {
-    height: 100vh;
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
-    height: 0;
+    opacity: 0;
+    transform: translateY(-100%);
   }
 }
 @keyframes blink {
@@ -215,24 +243,28 @@
     opacity: 1;
   }
 }
+@keyframes hint {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .nav {
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  background-color: black;
-  z-index: 100;
-}
-.nav i {
-  color: #f64a80;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.5rem 1rem 0;
-  transition: opacity 0.75s linear;
-  font-size: 48px;
-  line-height: 1;
-}
-.nav:hover {
-  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100vw);
+  position: absolute;
+  transition: opacity 0.75 linear;
 }
 .nav .navigation {
   transform: translateX(100vw);
@@ -242,20 +274,43 @@
   height: 0;
   overflow: hidden;
 }
-.nav.clicked {
+
+.nav.visible {
+  overflow: hidden;
+  transform: translateX(0vw);
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: black;
+  z-index: 100;
+}
+.nav.visible i {
+  color: #f64a80;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem 0;
+  transition: opacity 0.75s linear;
+  font-size: 48px;
+  line-height: 1;
+}
+.nav.visible:hover {
+  cursor: pointer;
+}
+.nav.visible.clicked {
   opacity: 1;
   background-color: #121212;
   display: flex;
   gap: 0;
   flex-direction: column;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   top: 0;
   right: 0;
   height: 100vh;
   width: 90vw;
 }
-.nav.clicked .navigation {
+.nav.visible.clicked .navigation {
   display: flex;
   flex: 1;
   color: #f64a80;
@@ -263,7 +318,7 @@
   opacity: 1;
   width: 100%;
 }
-.nav.clicked .navigation .list-unstyled {
+.nav.visible.clicked .navigation .list-unstyled {
   display: flex;
   width: 100%;
   font-size: 2rem;
@@ -273,11 +328,11 @@
   align-items: center;
   gap: 4rem;
 }
-.nav.clicked .navigation .list-unstyled a {
+.nav.visible.clicked .navigation .list-unstyled a {
   color: #f64a80;
 }
 @media only screen and (min-width: 40em) {
-  .nav {
+  .nav.visible {
     transition: all 0.5s linear;
     opacity: 0;
     display: flex;
@@ -286,7 +341,7 @@
     height: 0;
     overflow: hidden;
   }
-  .nav .navigation {
+  .nav.visible .navigation {
     transform: translateX(0vw);
     display: flex;
     transition: all 0.5s linear;
@@ -295,38 +350,42 @@
     width: 100%;
     justify-content: flex-end;
   }
-  .nav .navigation .list-unstyled {
+  .nav.visible .navigation .list-unstyled {
     display: flex;
     flex-direction: row;
     gap: 4rem;
     font-size: 1.5rem;
     font-weight: bold;
   }
-  .nav .navigation .list-unstyled a {
+  .nav.visible .navigation .list-unstyled a {
     display: inline-block;
     transition: transform 0.25s linear;
   }
-  .nav .navigation .list-unstyled a:hover {
+  .nav.visible .navigation .list-unstyled a:hover {
     color: #f64a80;
     transform: scale(1.1);
   }
-  .nav i {
+  .nav.visible i {
     font-size: 0;
     opacity: 0;
     padding: 0;
+    transform: translateX(100%);
+    position: absolute;
   }
-  .nav.sticky-nav {
+  .nav.visible.sticky-nav {
     opacity: 1;
     transform: translateY(0%);
     z-index: 1000;
     overflow: visible;
-    justify-content: flex-end;
+    justify-content: center;
   }
-  .nav.sticky-nav .navigation {
+  .nav.visible.sticky-nav .navigation {
     height: 4.5rem;
     position: fixed;
     opacity: 1;
     overflow: visible;
+    max-width: min(100%, 90em);
+    margin: 0 auto;
   }
 }
 
@@ -353,6 +412,7 @@
 html {
   box-sizing: border-box;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -363,9 +423,9 @@ html {
 
 body {
   margin: 0;
+  position: relative;
   background-color: black;
   transition: font-size 0.75s linear;
-  scroll-snap-type: y mandatory;
 }
 
 img {
@@ -377,20 +437,14 @@ svg {
 }
 
 .container-outer {
-  max-width: min(45em, 100%);
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.container-inner {
-  max-width: min(45em, 100%);
+  max-width: min(60em, 100%);
   margin: 0 auto;
   padding: 1.5rem;
+  text-align: center;
 }
 
 main {
-  scroll-snap-type: y mandatory;
+  position: relative;
 }
 
 .blur {
@@ -409,21 +463,25 @@ main {
 section {
   min-height: 100vh;
   color: white;
-  scroll-snap-align: start;
+  margin-bottom: 2rem;
 }
 
 .loader {
   display: flex;
   background-color: black;
   opacity: 1;
+  position: fixed;
+  transform: translateY(0);
+  z-index: 100;
   height: 100vh;
-  animation: appear 3.5s 0.5s linear forwards;
+  width: 100%;
+  animation: appear 3.5s linear forwards;
   justify-content: center;
   align-items: center;
 }
 .loader i {
   opacity: 0;
-  animation: blink 3s 1s linear forwards;
+  animation: blink 3s 0.5s linear forwards;
 }
 .loader i svg {
   height: 6rem;
@@ -440,7 +498,7 @@ section {
   transform: translateY(0);
   transition: all 0.5s linear;
   display: flex;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/background-phone.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background-phone.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -448,9 +506,15 @@ section {
   justify-content: center;
   align-items: center;
 }
+.home .container-inner {
+  max-width: min(45em, 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
 @media only screen and (min-width: 40em) {
   .home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/background.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background.png");
   }
 }
 .home .name {
@@ -471,12 +535,12 @@ section {
 }
 .home .shadow {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(255, 255, 255, 0);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
-  border: 1px solid rgba(255, 255, 255, 0.076);
+  border: 1px solid rgba(255, 255, 255, 0.014);
 }
 
 .illustrator,
@@ -489,6 +553,32 @@ section {
 
 .about {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (min-width: 87.5em) {
+  .about {
+    max-width: min(90em, 100%);
+    margin: 0 auto;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    flex-direction: row;
+  }
+  .about .text-part {
+    flex: 0.4;
+    padding-right: 0;
+    margin: 0;
+    font-size: 2rem;
+  }
+  .about .card-container {
+    flex: 0.6;
+  }
+  .about .card-container .card {
+    height: 20rem;
+  }
 }
 
 .list-unstyled {
@@ -540,11 +630,20 @@ h4 {
   color: transparent;
 }
 
-@media only screen and (min-width: 40em) {
-  p {
-    font-size: 1.5rem;
-  }
+.about {
+  font-size: 1.5rem;
+}
+.about .accent {
+  color: #f64a80;
+}
+.about .labels {
+  font-weight: bolder;
+}
+.about h4 {
+  margin-bottom: 0;
+}
 
+@media only screen and (min-width: 40em) {
   h1 {
     font-size: 4.209rem;
     margin: 1.5rem auto 0;
@@ -560,6 +659,14 @@ h4 {
 
   h4 {
     font-size: 1.777rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .card p {
+    font-size: 1.7rem;
   }
 }
 .nav-bar {

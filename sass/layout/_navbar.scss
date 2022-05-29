@@ -1,7 +1,25 @@
+//TODO rewrite nav bar to change at screen size and transition smoothly.get rid of multiple levels
 .nav {
+  opacity: 0;
+  transform: translateX(100vw);
+  position: absolute;
+  transition: opacity 0.75 linear;
+  .navigation {
+    transform: translateX(100vw);
+    transition: opacity 0.75s linear;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+.nav.visible {
   overflow: hidden;
-  position: sticky;
+  transform: translateX(0vw);
+  opacity: 1;
+  position: fixed;
   top: 0;
+  right: 0;
   background-color: $color-background;
   z-index: 100;
   i {
@@ -16,14 +34,6 @@
   &:hover {
     cursor: pointer;
   }
-  .navigation {
-    transform: translateX(100vw);
-    transition: opacity 0.75s linear;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
   &.clicked {
     opacity: 1;
     background-color: $color-background-light;
@@ -31,7 +41,7 @@
     gap: 0;
     flex-direction: column;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     right: 0;
     height: 100vh;
@@ -95,18 +105,22 @@
       font-size: 0;
       opacity: 0;
       padding: 0;
+      transform: translateX(100%);
+      position: absolute;
     }
     &.sticky-nav {
       opacity: 1;
       transform: translateY(0%);
       z-index: 1000;
       overflow: visible;
-      justify-content: flex-end;
+      justify-content: center;
       .navigation {
         height: 4.5rem;
         position: fixed;
         opacity: 1;
         overflow: visible;
+        max-width: min(100%, 90em);
+        margin: 0 auto;
       }
     }
   }

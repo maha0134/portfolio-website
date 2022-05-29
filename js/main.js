@@ -1,13 +1,13 @@
 const APP = {
   init: () => {
-    document.querySelector(".icons").addEventListener("animationend", () => {
-      document.body.classList.remove("no-scroll");
-    });
+    document
+      .querySelector(".loader")
+      .addEventListener("animationend", APP.animationEnd);
     document.getElementById("ham").addEventListener("click", APP.hamClicked);
     document.addEventListener("scroll", APP.scroll);
   },
   hamClicked: (event) => {
-    const nav = event.currentTarget;
+    const nav = document.querySelector(".nav");
     nav.classList.toggle("clicked");
     if (nav.classList.contains("clicked")) {
       nav.firstElementChild.textContent = "close";
@@ -34,6 +34,10 @@ const APP = {
     } else {
       document.querySelector(".home").classList.remove("scrolled");
     }
+  },
+  animationEnd: () => {
+    document.body.classList.remove("no-scroll");
+    document.querySelector(".nav").classList.add("visible");
   },
 };
 

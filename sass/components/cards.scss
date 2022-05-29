@@ -1,0 +1,103 @@
+//cards
+.card-container {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media only screen and (min-width: 40em) {
+    gap: 0;
+    &.container-outer {
+      max-width: min(70em, 100%);
+    }
+  }
+  .card {
+    opacity: 1;
+    // animation: hint 10s linear infinite;
+  }
+  // div:nth-child(1) {
+  //   animation-delay: 0s;
+  // }
+  // div:nth-child(2) {
+  //   animation-delay: 4s;
+  // }
+  // div:nth-child(3) {
+  //   animation-delay: 8s;
+  // }
+  // div:nth-child(4) {
+  //   animation-delay: 8s;
+  // }
+  .card {
+    transition: all 0.75s linear;
+    display: flex;
+    justify-content: center;
+    flex: 0 1 20rem;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 0.5em;
+    position: relative;
+    margin: 1rem;
+    padding: 0.5rem;
+    i,
+    .labels {
+      transition: transform 0.5s linear;
+    }
+    i {
+      animation: bounce 3s linear infinite;
+    }
+    .invisible {
+      transform: translateY(100%);
+      transition: transform 0.5s linear;
+      opacity: 0;
+      margin: 0;
+      padding: 0.25em;
+      font-size: 1rem;
+      font-family: "JetBrains Mono";
+      position: absolute;
+      @media only screen and (min-width: 40em) {
+        font-size: 1.5rem;
+      }
+    }
+    .cross {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: center;
+      // margin-top: -2rem;
+      @media only screen and (min-width: 40em) {
+        // margin-top: -3rem;
+      }
+      i {
+        display: inline-block;
+        margin: 0;
+      }
+    }
+    &:hover {
+      i,
+      .labels {
+        opacity: 0;
+        transform: translateY(-100%);
+        position: absolute;
+      }
+      cursor: pointer;
+      background-color: $color-secondary;
+      box-shadow: inset $color-secondary-dark 4px 4px 4px,
+        inset $color-secondary-dark -4px -4px 4px;
+      color: $color-background;
+      .invisible {
+        opacity: 1;
+        position: static;
+        transform: translateY(0);
+      }
+    }
+    @media only screen and (min-width: 47em) {
+      padding: 1rem;
+      gap: 0.5em;
+    }
+    i {
+      font-size: 42px;
+      @media only screen and (min-width: 40em) {
+        font-size: 56px;
+      }
+    }
+  }
+}
