@@ -57,7 +57,7 @@ section {
     padding: 1rem;
   }
   transform: translateY(0);
-  transition: all 0.5s linear;
+  transition: 0.5s linear;
   display: flex;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../images/background-phone.png");
@@ -96,10 +96,6 @@ section {
     -webkit-backdrop-filter: blur(4.5px);
     border: 1px solid rgba(255, 255, 255, 0.014);
   }
-  // &.scrolled {
-  //   transform: translateY(-100vh);
-  //   height: 0;
-  // }
 }
 
 .illustrator,

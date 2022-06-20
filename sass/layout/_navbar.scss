@@ -1,182 +1,76 @@
 //TODO rewrite nav bar to change at screen size and transition smoothly.get rid of multiple levels
-.nav {
-  opacity: 0;
-  transform: translateX(100vw);
-  position: absolute;
-  transition: opacity 0.75 linear;
-  .navigation {
-    transform: translateX(100vw);
-    transition: opacity 0.75s linear;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
+
+.nav-bar {
+  .list-unstyled {
+    transition: width 0.5s linear;
   }
-}
-.nav.visible {
-  overflow: hidden;
-  transform: translateX(0vw);
-  opacity: 1;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: $color-background;
-  z-index: 100;
+
+  position: relative;
   i {
-    color: $color-accent;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.5rem 1rem 0;
-    transition: opacity 0.75s linear;
-    font-size: 48px;
-    line-height: 1;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-  &.clicked {
-    opacity: 1;
-    background-color: $color-background-light;
-    display: flex;
-    gap: 0;
-    flex-direction: column;
+    background-color: $color-background;
     position: fixed;
-    z-index: 100;
-    top: 0;
+    top: 1rem;
+    z-index: 1;
+    right: 1rem;
+    color: $color-accent;
+    transform: translate(0);
+    opacity: 1;
+    transition: 0.5s linear;
+    font-size: 48px;
+    &:hover {
+      cursor: pointer;
+    }
+    @media only screen and (min-width: 40em) {
+      transform: translate(100vw, 0);
+      opacity: 0;
+    }
+  }
+  overflow-x: hidden;
+
+  .nav {
+    z-index: 1;
+    overflow-x: hidden;
+    opacity: 0.9;
+    position: fixed;
     right: 0;
-    height: 100vh;
-    width: 90vw;
-    .navigation {
-      display: flex;
-      flex: 1;
-      color: $color-accent;
-      transform: translateX(0vw);
-      opacity: 1;
-      width: 100%;
-      .list-unstyled {
-        display: flex;
-        width: 100%;
-        font-size: 2rem;
-        font-weight: bold;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 4rem;
-        a {
-          color: $color-accent;
+    top: 0;
+    min-height: 100vh;
+    width: 0;
+    display: flex;
+    font-size: 2rem;
+    color: $color-accent;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $color-background;
+    gap: 2rem;
+    align-items: center;
+    @media only screen and (min-width: 40em) {
+      width: 100vw;
+      font-size: 1.75rem;
+      flex-direction: row;
+      justify-content: flex-end;
+      // color: $color-primary;
+      min-height: 2rem;
+      padding: 1rem 2rem;
+
+      a {
+        display: inline-block;
+        transition: transform 0.25s linear;
+        &:hover {
+          color: $color-primary;
+          transform: scale(1.1);
         }
       }
     }
   }
-  @media only screen and (min-width: 40em) {
-    transition: all 0.5s linear;
-    opacity: 0;
-    display: flex;
-    width: 100%;
-    transform: translateY(-100%);
-    height: 0;
-    overflow: hidden;
-    .navigation {
-      transform: translateX(0vw);
-      display: flex;
-      transition: all 0.5s linear;
-      background-color: $color-background;
-      // box-shadow: $color-background-light 4px 4px 4px;
-      padding: 1.5rem 4rem;
-      width: 100%;
-      justify-content: flex-end;
-      .list-unstyled {
-        display: flex;
-        flex-direction: row;
-        gap: 4rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        a {
-          display: inline-block;
-          transition: transform 0.25s linear;
-          &:hover {
-            color: $color-accent;
-            transform: scale(1.1);
-          }
-        }
-      }
-    }
-    i {
-      font-size: 0;
-      opacity: 0;
-      padding: 0;
-      transform: translateX(100%);
-      position: absolute;
-    }
-    &.sticky-nav {
-      opacity: 1;
-      transform: translateY(0%);
-      z-index: 1000;
-      overflow: visible;
-      justify-content: center;
-      .navigation {
-        height: 4.5rem;
-        position: fixed;
-        opacity: 1;
-        overflow: visible;
-        max-width: min(100%, 90em);
-        margin: 0 auto;
-      }
+  .ham-clicked {
+    z-index: 11;
+  }
+  .width {
+    width: 0;
+    @media only screen and (min-width: 40em) {
+      width: 100vw;
     }
   }
 }
-// //side icon navigation from Tablet size onwards
-// @media only screen and (min-width: 40em) {
-//   aside {
-//     position: absolute;
-//     top: 1rem;
-//     font-size: 1.5rem;
-//     left: 2rem;
-//     .backbone {
-//       display: flex;
-//       position: absolute;
-//       flex-direction: column;
-//       justify-content: center;
-//       width: 0.5px;
-//       height: 95vh;
-//       background-color: $color-primary-light;
-//       gap: calc(100vh / 6);
-//       .dots {
-//         position: absolute;
-//         border-radius: 50%;
-//         border: solid 2.5px $color-accent;
-//         background-color: $color-background;
-//         height: 1.5rem;
-//         width: 1.5rem;
-//         left: -0.65rem;
-//         &.filled {
-//           background-color: $color-accent;
-//         }
-//       }
-//     }
-
-//     .home-dot::after,
-//     .about-dot::after,
-//     .portfolio-dot::after,
-//     .contact-dot::after {
-//       opacity: 0;
-//     }
-
-//     .home-dot:hover::after,
-//     .home-dot:focus::after,
-//     .about-dot:hover::after,
-//     .about-dot:focus::after,
-//     .portfolio-dot:hover::after,
-//     .portfolio-dot:focus::after,
-//     .contact-dot:hover::after,
-//     .contact-dot:focus::after {
-//       position: absolute;
-//       content: attr(data-desc);
-//       top: -0.5rem;
-//       left: 2rem;
-//       color: $color-primary;
-//       opacity: 1;
-//       transition: opacity 0.35s linear;
-//     }
-//   }
-// }

@@ -1,10 +1,10 @@
 @mixin list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin anchors {
-    text-decoration: none;
-    color: $color-primary;
+  text-decoration: none;
+  color: inherit;
 }
