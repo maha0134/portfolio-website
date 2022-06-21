@@ -1,8 +1,6 @@
-//TODO rewrite nav bar to change at screen size and transition smoothly.get rid of multiple levels
-
 .nav-bar {
   .list-unstyled {
-    transition: width 0.5s linear;
+    transition: width 0.35s linear;
   }
 
   position: relative;
@@ -10,7 +8,7 @@
     background-color: $color-background;
     position: fixed;
     top: 1rem;
-    z-index: 1;
+    z-index: 2;
     right: 1rem;
     color: $color-accent;
     transform: translate(0);
@@ -50,22 +48,21 @@
       font-size: 1.75rem;
       flex-direction: row;
       justify-content: flex-end;
-      // color: $color-primary;
+      color: $color-secondary;
       min-height: 2rem;
       padding: 1rem 2rem;
 
       a {
         display: inline-block;
-        transition: transform 0.25s linear;
-        &:hover {
-          color: $color-primary;
+        transition: transform 0.25s linear, color 0.25s linear;
+        &:hover,
+        &:focus,
+        &.current-page {
+          color: $color-accent;
           transform: scale(1.1);
         }
       }
     }
-  }
-  .ham-clicked {
-    z-index: 11;
   }
   .width {
     width: 0;

@@ -257,13 +257,13 @@
   overflow-x: hidden;
 }
 .nav-bar .list-unstyled {
-  transition: width 0.5s linear;
+  transition: width 0.35s linear;
 }
 .nav-bar i {
   background-color: black;
   position: fixed;
   top: 1rem;
-  z-index: 1;
+  z-index: 2;
   right: 1rem;
   color: #f64a80;
   transform: translate(0);
@@ -305,20 +305,18 @@
     font-size: 1.75rem;
     flex-direction: row;
     justify-content: flex-end;
+    color: #00fbff;
     min-height: 2rem;
     padding: 1rem 2rem;
   }
   .nav-bar .nav a {
     display: inline-block;
-    transition: transform 0.25s linear;
+    transition: transform 0.25s linear, color 0.25s linear;
   }
-  .nav-bar .nav a:hover {
-    color: white;
+  .nav-bar .nav a:hover, .nav-bar .nav a:focus, .nav-bar .nav a.current-page {
+    color: #f64a80;
     transform: scale(1.1);
   }
-}
-.nav-bar .ham-clicked {
-  z-index: 11;
 }
 .nav-bar .width {
   width: 0;
@@ -377,7 +375,7 @@ svg {
 }
 
 .container-outer {
-  max-width: min(60em, 100%);
+  max-width: min(50em, 100%);
   margin: 0 auto;
   padding: 1.5rem;
   text-align: center;
