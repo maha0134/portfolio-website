@@ -16,7 +16,7 @@
   opacity: 1;
 }
 .card-container .card {
-  transition: all 0.75s linear;
+  transition: all 0.5s linear;
   display: flex;
   justify-content: center;
   flex: 0 1 20rem;
