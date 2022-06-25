@@ -1,11 +1,13 @@
 .container-outer {
-  max-width: min(50em, 100%);
+  max-width: min(55em, 100%);
   margin: 0 auto;
   padding: 1.5rem;
   text-align: center;
 }
 main {
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
+  height: 100vh;
+  overflow-y: scroll;
   position: relative;
 }
 .blur {
@@ -23,6 +25,8 @@ section {
   min-height: 100vh;
   color: $color-primary;
   margin-bottom: 2rem;
+  scroll-snap-align: start;
+  scroll-margin: 2rem;
 }
 .loader {
   display: flex;
@@ -112,6 +116,9 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .container-outer.text-part {
+    padding-bottom: 0;
+  }
   @media only screen and (min-width: 87.5em) {
     .text-part {
       flex: 0.4;
@@ -119,7 +126,6 @@ section {
       margin: 0;
       font-size: 2rem;
     }
-
     max-width: min(90em, 100%);
     margin: 0 auto;
     justify-content: center;
