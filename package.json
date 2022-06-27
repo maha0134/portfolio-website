@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "This website is a showcase of all things that I have created.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maha0134/portfolio-website.git"
+  },
+  "author": "Akshay Mahajan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maha0134/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/maha0134/portfolio-website#readme"
+}

@@ -3,13 +3,29 @@ const APP = {
   nav: document.querySelector(".list-unstyled"),
   ham: document.getElementById("ham"),
   loader: document.querySelector(".loader"),
+  text: document.querySelector(".text-part"),
 
   //initial functions
   init: () => {
     APP.loader.addEventListener("animationend", APP.animationEnd);
     APP.ham.addEventListener("click", APP.hamClicked);
     APP.nav.addEventListener("click", APP.navClicked);
-    // document.addEventListener("scroll", APP.scroll);
+    const cards = document.querySelectorAll(".card-md");
+    VanillaTilt.init(cards),
+      {
+        max: 45,
+        speed: 400,
+      };
+    let typeWriter = new Typewriter(APP.text, {
+      autoStart: false,
+    });
+    typeWriter
+      .pauseFor(4000)
+      .typeString("Hi! My name is Akshay Mahajan and I love to solve problems.")
+      .pauseFor(1500)
+      .deleteAll(5)
+      .typeString("Here are a few things that I can create:")
+      .start();
   },
 
   hamClicked: (event) => {
@@ -59,26 +75,3 @@ const APP = {
 };
 
 document.addEventListener("DOMContentLoaded", APP.init);
-
-// scroll: () => {
-//   const nav = document.querySelector(".list-unstyled");
-//   if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-//     if (nav.classList.contains("off-screen")) {
-//       nav.classList.remove("off-screen");
-//       nav.classList.add("on-screen");
-//     }
-//   } else {
-//     if (nav.classList.contains("on-screen")) {
-//       nav.classList.remove("on-screen");
-//       nav.classList.add("off-screen");
-//     }
-//   }
-// },
-// if (
-//   document.body.scrollTop > 20 ||
-//   document.documentElement.scrollTop > 20
-// ) {
-//   document.querySelector(".home").classList.add("scrolled");
-// } else {
-//   document.querySelector(".home").classList.remove("scrolled");
-// }
