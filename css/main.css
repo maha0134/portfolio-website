@@ -1,3 +1,17 @@
+.shadow {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(255, 255, 255, 0.014);
+}
+.shadow.content {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+}
+
 .card-container {
   display: flex;
   gap: 1.5rem;
@@ -130,8 +144,8 @@
     grid-row: 3/5;
   }
 }
-.portfolio .cards-container {
-  gap: 2rem;
+.portfolio .card-container {
+  gap: 3rem;
 }
 .portfolio h2 {
   color: #f64a80;
@@ -143,7 +157,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
 }
 .portfolio .project .proj-title {
   margin-top: 0;
@@ -174,19 +188,29 @@
 .portfolio .project .image-wrap img {
   display: flex;
 }
+.portfolio .project .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 @media only screen and (min-width: 45em) {
   .portfolio .card-container {
     gap: 4rem;
   }
   .portfolio .project {
-    gap: 4rem;
-    min-height: 85vh;
+    gap: 2rem;
+    padding: 2rem 0;
+    background: linear-gradient(to right, #171717, black, #121212);
+    border: 1px solid #00fbff;
+    box-shadow: 5px 5px 20px #00fbff;
   }
   .portfolio .project .proj-title {
     text-align: right;
   }
   .portfolio .project .content {
-    gap: 2rem;
+    padding: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
     display: flex;
@@ -194,23 +218,53 @@
   .portfolio .project .content .image-wrap {
     margin: 0;
   }
+  .portfolio .project .content .text {
+    flex: 0.8;
+  }
   .portfolio .project .content .details {
-    flex: 0.9;
     margin: 0;
   }
+}
+@media only screen and (min-width: 45em) and (min-width: 87.5em) {
+  .portfolio .project:nth-child(odd) {
+    transform: translateX(-12rem);
+  }
+}
+@media only screen and (min-width: 45em) {
   .portfolio .project:nth-child(odd) .proj-title {
     align-self: flex-start;
   }
+}
+@media only screen and (min-width: 45em) {
   .portfolio .project:nth-child(odd) .content {
     text-align: right;
     flex-direction: row;
   }
+}
+@media only screen and (min-width: 45em) {
+  .portfolio .project:nth-child(odd) .text .btn {
+    align-self: flex-end;
+  }
+}
+@media only screen and (min-width: 45em) and (min-width: 87.5em) {
+  .portfolio .project:nth-child(even) {
+    transform: translateX(12rem);
+  }
+}
+@media only screen and (min-width: 45em) {
   .portfolio .project:nth-child(even) .proj-title {
     align-self: flex-end;
   }
+}
+@media only screen and (min-width: 45em) {
   .portfolio .project:nth-child(even) .content {
     text-align: left;
     flex-direction: row-reverse;
+  }
+}
+@media only screen and (min-width: 45em) {
+  .portfolio .project:nth-child(even) .text .btn {
+    align-self: flex-start;
   }
 }
 
@@ -257,12 +311,31 @@
   background-color: white;
 }
 
-.contact .btn-linkedin,
-.contact .btn-email {
-  margin: 0;
+.portfolio i {
+  width: 2rem;
+  height: 2rem;
 }
-.contact .btn-linkedin a,
-.contact .btn-email a {
+@media only screen and (min-width: 45em) {
+  .portfolio i {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.portfolio svg {
+  max-width: 2rem;
+  max-height: 2rem;
+  background-color: #f64a80;
+}
+
+.btn-accent,
+.btn-email,
+.btn-secondary {
+  margin: 0;
+  color: black;
+}
+.btn-accent a,
+.btn-email a,
+.btn-secondary a {
   text-decoration: none;
   padding: 0.55em 1em;
   font-family: Arial, Helvetica, sans-serif;
@@ -272,33 +345,44 @@
   font-size: 1.5rem;
   color: black;
 }
-.contact .btn-linkedin svg,
-.contact .btn-email svg {
+.btn-accent svg,
+.btn-email svg,
+.btn-secondary svg {
   background-color: inherit;
 }
-.contact .btn-linkedin {
+
+.btn-accent {
   padding: 0 1rem;
 }
-.contact .btn-linkedin i {
+.btn-accent i {
   width: 1.5rem;
   height: 1.5rem;
 }
 @media only screen and (min-width: 45em) {
-  .contact .btn-linkedin i {
+  .btn-accent i {
     width: 2rem;
     height: 2rem;
   }
 }
-.contact .btn-email {
+
+.btn-email,
+.btn-secondary {
   padding: 0 1.75rem;
   background-color: #00fbff;
   transition: all 0.35s linear;
 }
-.contact .btn-email i {
+.btn-email i,
+.btn-secondary i {
   font-size: 32px;
 }
-.contact .btn-email:hover, .contact .btn-email:focus {
+.btn-email:hover, .btn-email:focus,
+.btn-secondary:hover,
+.btn-secondary:focus {
   background-color: #f64a80;
+}
+
+.portfolio .btn-secondary {
+  padding: 0 0.5rem;
 }
 
 @keyframes bounce {
@@ -514,14 +598,14 @@
 }
 
 .foot {
-  background-color: #121212;
-  padding-bottom: 1rem;
+  background-color: #171717;
+  padding: 1rem;
   text-align: center;
 }
 @media only screen and (min-width: 45em) {
   .foot {
     text-align: right;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 }
 
@@ -574,7 +658,7 @@ svg {
 }
 
 .container-outer {
-  max-width: min(60em, 100%);
+  max-width: min(65em, 100%);
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -676,20 +760,6 @@ section:nth-child(3) {
   font-family: "JetBrains Mono", monospace;
 }
 
-.shadow {
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
-  border: 1px solid rgba(255, 255, 255, 0.014);
-}
-.shadow.content {
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-}
-
 .illustrator,
 .css,
 .html {
@@ -733,7 +803,7 @@ section:nth-child(3) {
   gap: 1.25rem;
   align-items: center;
 }
-.contact .container-outer h2 {
+.contact .container-outer h3 {
   margin: 0;
 }
 @media only screen and (min-width: 45em) {
@@ -741,9 +811,9 @@ section:nth-child(3) {
     flex-direction: row;
     gap: 2rem;
     justify-content: space-between;
-    padding-bottom: 0;
+    padding: 1rem;
   }
-  .contact .container-outer h2 {
+  .contact .container-outer h3 {
     padding: 0;
   }
 }

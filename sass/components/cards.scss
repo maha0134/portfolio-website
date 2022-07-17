@@ -1,3 +1,17 @@
+.shadow {
+  /* From https://css.glass */
+  background: $color-transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(255, 255, 255, 0.014);
+  &.content {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+  }
+}
+
 //About section
 .card-container {
   display: flex;
@@ -142,8 +156,8 @@
 }
 //Portfolio Section
 .portfolio {
-  .cards-container {
-    gap: 2rem;
+  .card-container {
+    gap: 3rem;
   }
   h2 {
     color: $color-accent;
@@ -155,7 +169,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
+
     .proj-title {
       margin-top: 0;
       padding: 0 1rem;
@@ -185,53 +200,79 @@
         display: flex;
       }
     }
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
   @media only screen and (min-width: 45em) {
     .card-container {
       gap: 4rem;
     }
     .project {
-      gap: 4rem;
-      min-height: 85vh;
+      gap: 2rem;
+      padding: 2rem 0;
+      background: linear-gradient(
+        to right,
+        $color-background-clear,
+        $color-background,
+        $color-background-light
+      );
+      border: 1px solid $color-secondary;
+      box-shadow: 5px 5px 20px $color-secondary;
       .proj-title {
         text-align: right;
       }
       .content {
-        gap: 2rem;
+        padding: 2rem;
+        gap: 1rem;
         align-items: center;
         justify-content: space-between;
         display: flex;
         .image-wrap {
           margin: 0;
         }
+        .text {
+          flex: 0.8;
+        }
         .details {
-          flex: 0.9;
           margin: 0;
         }
       }
       &:nth-child(odd) {
+        @media only screen and (min-width: 87.5em) {
+          transform: translateX(-12rem);
+        }
         .proj-title {
           align-self: flex-start;
-          &::after {
-            // left: -1.5rem;
-          }
         }
         .content {
           text-align: right;
           flex-direction: row;
         }
+        .text {
+          .btn {
+            align-self: flex-end;
+          }
+        }
       }
       &:nth-child(even) {
+        @media only screen and (min-width: 87.5em) {
+          transform: translateX(12rem);
+        }
         .proj-title {
           align-self: flex-end;
-          &::after {
-            // right: -1.5rem;
-            // left: initial;
-          }
         }
         .content {
           text-align: left;
           flex-direction: row-reverse;
+        }
+        .text {
+          .btn {
+            align-self: flex-start;
+          }
         }
       }
     }
