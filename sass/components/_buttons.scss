@@ -1,9 +1,9 @@
 .btn {
   border-radius: 5rem;
-  border: solid 2px $color-secondary;
-  padding: 0.35em 1.25em 0.35em;
-  color: $color-primary;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow: inset 0px 0px 3px $color-background;
+  background-color: $color-accent;
+  cursor: pointer;
+  transition: all 0.35s linear;
 }
 
 // Transitions
@@ -11,8 +11,6 @@
 .btn:hover,
 .btn:focus {
   background-color: $color-secondary;
-  color: $color-primary;
-  border-color: $color-primary;
 }
 
 //icons
@@ -43,6 +41,49 @@
     border: 1px $color-primary solid;
     svg {
       background-color: $color-primary;
+    }
+  }
+}
+
+.contact {
+  .btn-linkedin,
+  .btn-email {
+    margin: 0;
+    a {
+      text-decoration: none;
+      padding: 0.55em 1em;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.5rem;
+      color: $color-background;
+    }
+    svg {
+      background-color: inherit;
+    }
+  }
+  .btn-linkedin {
+    padding: 0 1rem;
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+      @media only screen and (min-width: 45em) {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  .btn-email {
+    padding: 0 1.75rem;
+    background-color: $color-secondary;
+    transition: all 0.35s linear;
+    i {
+      font-size: 32px;
+    }
+    &:hover,
+    &:focus {
+      background-color: $color-accent;
     }
   }
 }

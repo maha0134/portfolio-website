@@ -13,8 +13,8 @@
   background: linear-gradient(to left, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.1));
   border-radius: 16px;
   margin: 0 2rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-top: 2px solid rgba(255, 255, 255, 0.5);
 }
@@ -103,46 +103,128 @@
   }
 }
 @media only screen and (min-width: 87.5em) {
-  .card-container {
+  .about .card-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(5, 1fr);
   }
-  .card-container .card-md {
+  .about .card-container .card-md {
     padding: 0.5rem;
     line-height: 1.2;
     margin: 1rem;
   }
-  .card-container .card-md:nth-child(1) {
+  .about .card-container .card-md:nth-child(1) {
     grid-column: 5/9;
     grid-row: 1/3;
   }
-  .card-container .card-md:nth-child(2) {
+  .about .card-container .card-md:nth-child(2) {
     grid-column: 1/5;
     grid-row: 2/4;
   }
-  .card-container .card-md:nth-child(3) {
+  .about .card-container .card-md:nth-child(3) {
     grid-column: 9/13;
     grid-row: 2/4;
   }
-  .card-container .card-md:nth-child(4) {
+  .about .card-container .card-md:nth-child(4) {
     grid-column: 5/9;
     grid-row: 3/5;
   }
 }
+.portfolio .cards-container {
+  gap: 2rem;
+}
+.portfolio h2 {
+  color: #f64a80;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.portfolio .project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.portfolio .project .proj-title {
+  margin-top: 0;
+  padding: 0 1rem;
+}
+.portfolio .project .proj-title::after {
+  z-index: -1;
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00fbff;
+}
+.portfolio .project .image-wrap {
+  max-width: 18.5rem;
+  margin: 0 auto;
+  border: 0.25rem white solid;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+.portfolio .project .image-wrap.desk {
+  max-width: 25rem;
+  border-radius: 5px;
+  border: none;
+}
+.portfolio .project .image-wrap img {
+  display: flex;
+}
+@media only screen and (min-width: 45em) {
+  .portfolio .card-container {
+    gap: 4rem;
+  }
+  .portfolio .project {
+    gap: 4rem;
+    min-height: 85vh;
+  }
+  .portfolio .project .proj-title {
+    text-align: right;
+  }
+  .portfolio .project .content {
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+  }
+  .portfolio .project .content .image-wrap {
+    margin: 0;
+  }
+  .portfolio .project .content .details {
+    flex: 0.9;
+    margin: 0;
+  }
+  .portfolio .project:nth-child(odd) .proj-title {
+    align-self: flex-start;
+  }
+  .portfolio .project:nth-child(odd) .content {
+    text-align: right;
+    flex-direction: row;
+  }
+  .portfolio .project:nth-child(even) .proj-title {
+    align-self: flex-end;
+  }
+  .portfolio .project:nth-child(even) .content {
+    text-align: left;
+    flex-direction: row-reverse;
+  }
+}
+
 .btn {
   border-radius: 5rem;
-  border: solid 2px #00fbff;
-  padding: 0.35em 1.25em 0.35em;
-  color: white;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow: inset 0px 0px 3px black;
+  background-color: #f64a80;
+  cursor: pointer;
+  transition: all 0.35s linear;
 }
 
 .btn:hover,
 .btn:focus {
   background-color: #00fbff;
-  color: white;
-  border-color: white;
 }
 
 .material-icons-outlined.md-32 {
@@ -173,6 +255,50 @@
 }
 .icons i svg {
   background-color: white;
+}
+
+.contact .btn-linkedin,
+.contact .btn-email {
+  margin: 0;
+}
+.contact .btn-linkedin a,
+.contact .btn-email a {
+  text-decoration: none;
+  padding: 0.55em 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  color: black;
+}
+.contact .btn-linkedin svg,
+.contact .btn-email svg {
+  background-color: inherit;
+}
+.contact .btn-linkedin {
+  padding: 0 1rem;
+}
+.contact .btn-linkedin i {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media only screen and (min-width: 45em) {
+  .contact .btn-linkedin i {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.contact .btn-email {
+  padding: 0 1.75rem;
+  background-color: #00fbff;
+  transition: all 0.35s linear;
+}
+.contact .btn-email i {
+  font-size: 32px;
+}
+.contact .btn-email:hover, .contact .btn-email:focus {
+  background-color: #f64a80;
 }
 
 @keyframes bounce {
@@ -291,6 +417,26 @@
     opacity: 1;
   }
 }
+@keyframes line {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  49% {
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  99% {
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
 .nav-bar {
   position: relative;
   overflow-x: hidden;
@@ -367,6 +513,18 @@
   }
 }
 
+.foot {
+  background-color: #121212;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+@media only screen and (min-width: 45em) {
+  .foot {
+    text-align: right;
+    padding: 1rem;
+  }
+}
+
 .skip-links {
   list-style: none;
   margin: 0;
@@ -416,14 +574,23 @@ svg {
 }
 
 .container-outer {
-  max-width: min(55em, 100%);
+  max-width: min(60em, 100%);
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
 }
 
 main {
   position: relative;
+  background-position: center;
+  background-size: 100vw 100vh;
+  background-repeat: repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background-phone.png");
+}
+@media only screen and (min-width: 40em) {
+  main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background.png");
+  }
 }
 
 .blur {
@@ -440,10 +607,14 @@ main {
 }
 
 section {
-  min-height: 100vh;
   color: white;
-  margin-bottom: 2rem;
+}
+section:not(:nth-of-type(4), :nth-of-type(5)) {
   scroll-margin: 2rem;
+  min-height: 100vh;
+}
+section:nth-child(3) {
+  margin-bottom: 0;
 }
 
 .loader {
@@ -478,10 +649,6 @@ section {
   transform: translateY(0);
   transition: 0.5s linear;
   display: flex;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background-phone.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -491,11 +658,6 @@ section {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-}
-@media only screen and (min-width: 40em) {
-  .home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background.png");
-  }
 }
 .home .name {
   display: inline-block;
@@ -513,7 +675,8 @@ section {
   text-align: right;
   font-family: "JetBrains Mono", monospace;
 }
-.home .shadow {
+
+.shadow {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0);
   border-radius: 16px;
@@ -521,6 +684,10 @@ section {
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
   border: 1px solid rgba(255, 255, 255, 0.014);
+}
+.shadow.content {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
 }
 
 .illustrator,
@@ -537,11 +704,11 @@ section {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+}
+.about .container-outer {
   max-width: min(90em, 100%);
   margin: 0 auto;
-}
-.about .container-outer.text-part {
-  padding-bottom: 0;
+  padding: 0;
 }
 .about .text-part {
   padding: 1rem;
@@ -550,11 +717,34 @@ section {
 }
 @media only screen and (min-width: 87.5em) {
   .about {
-    margin: 0 auto;
     justify-content: center;
     padding: 1rem 2rem 0;
     justify-content: space-between;
     gap: 3rem;
+  }
+}
+
+.contact {
+  background-color: #121212;
+}
+.contact .container-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+.contact .container-outer h2 {
+  margin: 0;
+}
+@media only screen and (min-width: 45em) {
+  .contact .container-outer {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+  .contact .container-outer h2 {
+    padding: 0;
   }
 }
 
@@ -620,7 +810,17 @@ h4 {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 40em) {
+.portfolio .content {
+  color: #00fbff;
+}
+.portfolio .proj-title {
+  color: black;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 60em) {
   h1 {
     font-size: 4.209rem;
     margin: 1.5rem auto 0;

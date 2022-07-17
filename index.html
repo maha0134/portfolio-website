@@ -129,94 +129,189 @@
         </div>
       </section>
       <section class="about" id="about">
-        <div class="text-part">
-          <!-- <p>
-            Hi! My name is <span class="">Akshay Mahajan</span> and I love to
-            solve problems.
-          </p> -->
-          <!-- <p>
-            I am a Full Stack Web and Mobile Applications Developer and a UI
-            Designer.
-          </p> -->
-        </div>
-        <div class="card-container">
-          <div
-            data-tilt-scale="1.1"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.4"
-            class="card card-md"
-          >
-            <div class="visible">
-              <i class="material-icons-outlined"> devices </i>
-              <p class="labels">Responsive Websites</p>
+        <div class="container-outer">
+          <div class="text-part shadow"></div>
+          <div class="card-container">
+            <div
+              data-tilt-scale="1.1"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.4"
+              class="card card-md"
+            >
+              <div class="visible">
+                <span class="cross">
+                  <i class="material-icons-outlined"> android </i>
+                  <i class="material-icons-outlined"> phone_iphone </i>
+                </span>
+                <p class="labels">Cross Platform Mobile Apps</p>
+              </div>
+              <p class="invisible extra">
+                I can develop Full Stack cross platform mobile apps using
+                Flutter and Node js.
+              </p>
             </div>
-            <p class="invisible">
-              I can create responsive websites that work well across mobiles,
-              tabs and desktops.
-            </p>
-          </div>
-          <div
-            data-tilt-scale="1.1"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.4"
-            class="card card-md"
-          >
-            <div class="visible">
-              <i class="material-icons-outlined"> api </i>
-              <p class="labels">API Development</p>
+            <div
+              data-tilt-scale="1.1"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.4"
+              class="card card-md"
+            >
+              <div class="visible">
+                <i class="material-icons-outlined"> devices </i>
+                <p class="labels">Responsive Websites</p>
+              </div>
+              <p class="invisible">
+                I can create responsive websites that work well across mobiles,
+                tabs and desktops.
+              </p>
             </div>
-            <p class="invisible">
-              I can develop APIs employing CRUD routes using Node.js, Express
-              and mongoDB.
-            </p>
-          </div>
-          <div
-            data-tilt-scale="1.1"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.4"
-            class="card card-md"
-          >
-            <div class="visible">
-              <span class="cross">
-                <i class="material-icons-outlined"> android </i>
-                <i class="material-icons-outlined"> phone_iphone </i>
-              </span>
-              <p class="labels">Cross Platform Mobile Apps</p>
+            <div
+              data-tilt-scale="1.1"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.4"
+              class="card card-md"
+            >
+              <div class="visible">
+                <i class="material-icons-outlined"> api </i>
+                <p class="labels">API Development</p>
+              </div>
+              <p class="invisible">
+                I can develop APIs employing CRUD routes using Node.js, Express
+                and mongoDB.
+              </p>
             </div>
-            <p class="invisible extra">
-              I can develop Full Stack cross platform mobile apps using Flutter
-              and Node js.
-            </p>
-          </div>
-          <div
-            data-tilt-scale="1.1"
-            data-tilt
-            data-tilt-glare
-            data-tilt-max-glare="0.4"
-            class="card card-md"
-          >
-            <div class="visible">
-              <i class="material-icons-outlined"> draw </i>
-              <p class="labels">UI Designer</p>
+            <div
+              data-tilt-scale="1.1"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.4"
+              class="card card-md"
+            >
+              <div class="visible">
+                <i class="material-icons-outlined"> draw </i>
+                <p class="labels">UI Designer</p>
+              </div>
+              <p class="invisible">
+                I can create content using Adobe softwares following Material
+                &amp; UI design guidelines.
+              </p>
             </div>
-            <p class="invisible">
-              I can create content using Adobe softwares following Material
-              &amp; UI design guidelines.
-            </p>
           </div>
         </div>
       </section>
       <section class="portfolio" id="portfolio">
         <div class="container-outer">
-          <h3>Projects</h3>
-          <div class="cards-container"></div>
+          <h2>Projects</h2>
+          <ul class="card-container list-unstyled">
+            <li class="project">
+              <h3 class="proj-title shadow">Flutter App</h3>
+              <div class="content shadow">
+                <div class="image-wrap">
+                  <img
+                    src="./images/flutter.gif"
+                    alt="gif containing screenshots of app"
+                  />
+                </div>
+                <p class="details">
+                  A cross platform multi-screen application built using Flutter
+                  that allows you to add gifting ideas for your friends. It uses
+                  a Node server in the backend that stores all information.
+                </p>
+              </div>
+            </li>
+            <li class="project">
+              <h3 class="proj-title shadow">Node Server</h3>
+              <div class="content shadow">
+                <div class="image-wrap desk">
+                  <img
+                    src="./images/mongodb document.png"
+                    alt="screenshot of mongoDB document"
+                  />
+                </div>
+                <p class="details">
+                  The backend of the Flutter App created using Node.js that uses
+                  mongoDB and is capable of adding and authenticating users. It
+                  uses CRUD routes to perform operations on its collections.
+                </p>
+              </div>
+            </li>
+            <li class="project">
+              <h3 class="proj-title shadow">Progressive Web App</h3>
+              <div class="content shadow">
+                <div class="image-wrap desk">
+                  <img
+                    src="./images/pwa-screenshot.png"
+                    alt="screenshot of a progressive web app"
+                  />
+                </div>
+                <p class="details">
+                  A Progressive Web Application that lets you search for movie
+                  names and see recommended movies based on those
+                  results(fetched from the
+                  <a
+                    href="https://developers.themoviedb.org/3/getting-started/introduction"
+                    >TMDB API</a
+                  >). The offline first web app uses indexed DB to store and a
+                  service worker to cache all search and suggestion results.
+                </p>
+              </div>
+            </li>
+            <li class="project">
+              <h3 class="proj-title shadow">Single Page App</h3>
+              <div class="content shadow">
+                <div class="image-wrap desk">
+                  <img
+                    src="./images/spa.png"
+                    alt="screenshot of a single page application"
+                  />
+                </div>
+                <p class="details">
+                  A Single Page Application that lets you search for your
+                  favorite actors and see their popular movies and TV Shows. The
+                  app uses History API to push URLs to the user's browser
+                  history.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
-      <section class="contact" id="contact"></section>
-      <section class="foot" id="foot"></section>
+      <section class="contact" id="contact">
+        <div class="container-outer">
+          <h2>Get in touch</h2>
+          <div class="btn btn-linkedin">
+            <a href="https://www.linkedin.com/in/akshay-mahajan-1b5508188/">
+              <i>
+                <svg
+                  id="Final_Icons"
+                  data-name="Final Icons"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 256 256"
+                >
+                  <g>
+                    <rect x="4.69" y="85.27" width="53.25" height="170.5" />
+                    <circle cx="31.32" cy="31.56" r="31.32" />
+                    <path
+                      d="M256,255.76H202.75V159.07s1.82-30.86-27.38-31.59-31,31.59-31,31.59v96.69H91.11V85.27h53.25V105.8S160.48,81,192.26,81c41.79,0,49,19.83,53.93,27S256,133.69,256,159.07Z"
+                    />
+                  </g>
+                </svg>
+              </i>
+              LinkedIn
+            </a>
+          </div>
+          <div class="btn btn-email">
+            <a href="https://www.linkedin.com/in/akshay-mahajan-1b5508188/">
+              <i class="material-icons-outlined"> forward_to_inbox </i>
+              Email
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="foot" id="foot">&copy; Akshay Mahajan 2022</section>
     </main>
     <script src="./js/vanilla-tilt.js"></script>
     <script src="./js/core.js"></script>

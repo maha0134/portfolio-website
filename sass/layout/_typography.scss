@@ -63,9 +63,19 @@ h4 {
     margin-bottom: 0;
   }
 }
-
+.portfolio {
+  .content {
+    color: $color-secondary;
+  }
+  .proj-title {
+    color: $color-background;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+}
 //Tablet and Desktop view
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   h1 {
     font-size: 4.209rem;
     margin: 1.5rem auto 0;

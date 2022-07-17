@@ -1,0 +1,9 @@
+.foot {
+  background-color: $color-background-light;
+  padding-bottom: 1rem;
+  text-align: center;
+  @media only screen and (min-width: 45em) {
+    text-align: right;
+    padding: 1rem;
+  }
+}
