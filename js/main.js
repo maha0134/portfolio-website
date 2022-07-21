@@ -7,10 +7,18 @@ const APP = {
 
   //initial functions
   init: () => {
+    if (!location.hash) {
+      APP.setPage(false);
+    } else {
+      APP.setNav(false);
+    }
+
     APP.loader.addEventListener("animationend", APP.animationEnd);
     APP.ham.addEventListener("click", APP.hamClicked);
-    APP.nav.addEventListener("click", APP.navClicked);
+    APP.nav.addEventListener("click", APP.setNav);
     const cards = document.querySelectorAll(".card-md");
+    document.addEventListener("scroll", APP.scrolled);
+
     VanillaTilt.init(cards),
       {
         max: 45,
@@ -61,16 +69,33 @@ const APP = {
     APP.ham.textContent = "menu";
   },
 
-  navClicked: (ev) => {
-    const navLink = ev.target.closest("a");
-    if (navLink) {
+  setNav: (ev) => {
+    if (!ev) {
+      let hash = location.hash.toString().slice(1) + "-link";
       document.querySelector(".current-page").classList.remove("current-page");
-      navLink.classList.add("current-page");
+      document.querySelector(`.${hash}`).classList.add("current-page");
+    } else {
+      const navLink = ev.target.closest("a");
+      if (navLink) {
+        document
+          .querySelector(".current-page")
+          .classList.remove("current-page");
+        navLink.classList.add("current-page");
+      }
     }
   },
 
   animationEnd: () => {
     document.body.classList.remove("no-scroll");
+  },
+  scrolled: () => {},
+  setPage: (hash) => {
+    //first load or reload
+    if (!hash) {
+      let url = new URL(location.href);
+      url.hash = "home";
+      history.replaceState({}, "", url);
+    }
   },
 };
 
