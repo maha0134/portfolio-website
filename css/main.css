@@ -37,7 +37,7 @@
   margin: 0;
   justify-content: center;
   flex-direction: column;
-  color: #f64a80;
+  color: rgb(246, 74, 128);
   transform: translateY(50%);
 }
 .card-container .card .visible .cross {
@@ -63,7 +63,7 @@
   margin: 0;
   display: flex;
   z-index: -1;
-  color: #f64a80;
+  color: rgb(246, 74, 128);
 }
 
 @media only screen and (min-width: 40em) {
@@ -90,7 +90,7 @@
     height: 100%;
     align-items: center;
     z-index: -1;
-    color: #f64a80;
+    color: rgb(246, 74, 128);
     background-color: transparent;
     opacity: 1;
     box-shadow: none;
@@ -148,7 +148,7 @@
   gap: 3rem;
 }
 .portfolio h2 {
-  color: #f64a80;
+  color: rgb(246, 74, 128);
   margin-top: 0;
   margin-bottom: 2rem;
 }
@@ -171,12 +171,12 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #00fbff;
+  background-color: rgb(0, 251, 255);
 }
 .portfolio .project .image-wrap {
   max-width: 18.5rem;
   margin: 0 auto;
-  border: 0.25rem white solid;
+  border: 0.25rem hsl(0deg, 0%, 100%) solid;
   overflow: hidden;
   border-radius: 2rem;
 }
@@ -204,9 +204,9 @@
   .portfolio .project {
     gap: 2rem;
     padding: 2rem 0;
-    background: linear-gradient(to right, #171717, black, #121212);
-    border: 1px solid #00fbff;
-    box-shadow: 5px 5px 20px #00fbff;
+    background: linear-gradient(to right, hsl(0deg, 0%, 9%), hsl(0deg, 0%, 0%), hsl(0deg, 0%, 7%));
+    border: 1px solid rgb(0, 251, 255);
+    box-shadow: 5px 5px 20px rgb(0, 251, 255);
   }
   .portfolio .project .proj-title {
     text-align: right;
@@ -273,15 +273,15 @@
 
 .btn {
   border-radius: 5rem;
-  box-shadow: inset 0px 0px 3px black;
-  background-color: #f64a80;
+  box-shadow: inset 0px 0px 3px hsl(0deg, 0%, 0%);
+  background-color: rgb(246, 74, 128);
   cursor: pointer;
   transition: all 0.35s linear;
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: #00fbff;
+  background-color: rgb(230, 33, 102);
 }
 
 .material-icons-outlined.md-32 {
@@ -302,7 +302,7 @@
 .icons i {
   width: 1.5rem;
   height: 1.5rem;
-  border: 1px white solid;
+  border: 1px hsl(0deg, 0%, 100%) solid;
 }
 @media only screen and (min-width: 40em) {
   .icons i {
@@ -311,7 +311,7 @@
   }
 }
 .icons i svg {
-  background-color: white;
+  background-color: hsl(0deg, 0%, 100%);
 }
 
 .portfolio i {
@@ -327,14 +327,14 @@
 .portfolio svg {
   max-width: 2rem;
   max-height: 2rem;
-  background-color: #f64a80;
+  background-color: rgb(246, 74, 128);
 }
 
 .btn-accent,
 .btn-email,
 .btn-secondary {
   margin: 0;
-  color: black;
+  color: hsl(0deg, 0%, 0%);
 }
 .btn-accent a,
 .btn-email a,
@@ -346,7 +346,7 @@
   display: flex;
   gap: 1.5rem;
   font-size: 1.5rem;
-  color: black;
+  color: hsl(0deg, 0%, 0%);
 }
 .btn-accent svg,
 .btn-email svg,
@@ -371,7 +371,7 @@
 .btn-email,
 .btn-secondary {
   padding: 0 1.75rem;
-  background-color: #00fbff;
+  background-color: rgb(0, 251, 255);
   transition: all 0.35s linear;
 }
 .btn-email i,
@@ -381,7 +381,7 @@
 .btn-email:hover, .btn-email:focus,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background-color: #f64a80;
+  background-color: rgb(0, 207, 210);
 }
 
 .portfolio .btn-secondary {
@@ -532,13 +532,13 @@
   transition: width 0.35s linear;
 }
 .nav-bar i {
-  background-color: black;
+  background-color: hsl(0deg, 0%, 0%);
   border-radius: 10px;
   position: fixed;
   top: 1rem;
   z-index: 2;
   right: 1rem;
-  color: #f64a80;
+  color: rgb(246, 74, 128);
   transform: translate(0);
   opacity: 1;
   transition: 0.5s linear;
@@ -564,11 +564,11 @@
   width: 0;
   display: flex;
   font-size: 2rem;
-  color: #f64a80;
+  color: rgb(246, 74, 128);
   font-weight: bold;
   flex-direction: column;
   justify-content: center;
-  background-color: black;
+  background-color: hsl(0deg, 0%, 0%);
   gap: 2rem;
   align-items: center;
 }
@@ -578,7 +578,7 @@
     font-size: 1.75rem;
     flex-direction: row;
     justify-content: flex-end;
-    color: #00fbff;
+    color: rgb(0, 251, 255);
     min-height: 2rem;
     padding: 1rem 2rem;
   }
@@ -587,7 +587,7 @@
     transition: transform 0.25s linear, color 0.25s linear;
   }
   .nav-bar .nav a:hover, .nav-bar .nav a:focus, .nav-bar .nav a.current-page {
-    color: #f64a80;
+    color: rgb(246, 74, 128);
     transform: scale(1.1);
   }
 }
@@ -601,7 +601,7 @@
 }
 
 .foot {
-  background-color: #171717;
+  background-color: hsl(0deg, 0%, 9%);
   padding: 1rem;
   text-align: center;
 }
@@ -622,7 +622,7 @@
   color: inherit;
   position: absolute;
   width: 100%;
-  background-color: #00fbff;
+  background-color: rgb(0, 251, 255);
   top: -200rem;
   z-index: 1000;
   text-align: center;
@@ -648,7 +648,7 @@ html {
 body {
   margin: 0;
   position: relative;
-  background-color: black;
+  background-color: hsl(0deg, 0%, 0%);
   transition: font-size 0.75s linear;
 }
 
@@ -694,7 +694,7 @@ main {
 }
 
 section {
-  color: white;
+  color: hsl(0deg, 0%, 100%);
 }
 section:not(:nth-of-type(4), :nth-of-type(5)) {
   scroll-margin: 2rem;
@@ -706,7 +706,7 @@ section:nth-child(3) {
 
 .loader {
   display: flex;
-  background-color: black;
+  background-color: hsl(0deg, 0%, 0%);
   opacity: 1;
   position: fixed;
   transform: translateY(0);
@@ -798,7 +798,7 @@ section:nth-child(3) {
 }
 
 .contact {
-  background-color: #121212;
+  background-color: hsl(0deg, 0%, 7%);
 }
 .contact .container-outer {
   display: flex;
@@ -864,7 +864,7 @@ h4 {
 }
 
 .name {
-  background-image: linear-gradient(to right, #f64a80, #ff9cbb);
+  background-image: linear-gradient(to right, rgb(246, 74, 128), rgb(255, 156, 187));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -874,7 +874,7 @@ h4 {
   font-size: 2rem;
 }
 .about .accent {
-  color: #f64a80;
+  color: rgb(246, 74, 128);
 }
 .about .labels {
   font-weight: bolder;
@@ -884,10 +884,10 @@ h4 {
 }
 
 .portfolio .content {
-  color: #00fbff;
+  color: rgb(0, 251, 255);
 }
 .portfolio .proj-title {
-  color: black;
+  color: hsl(0deg, 0%, 0%);
   margin: 0;
   position: relative;
   z-index: 1;
@@ -898,23 +898,18 @@ h4 {
     font-size: 4.209rem;
     margin: 1.5rem auto 0;
   }
-
   h2 {
     font-size: 3.157rem;
   }
-
   h3 {
     font-size: 2.369rem;
   }
-
   h4 {
     font-size: 1.777rem;
   }
-
   p {
     font-size: 2rem;
   }
-
   .card p {
     font-size: 1.7rem;
   }

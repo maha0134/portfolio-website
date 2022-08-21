@@ -4,6 +4,8 @@ const APP = {
   ham: document.getElementById("ham"),
   loader: document.querySelector(".loader"),
   text: document.querySelector(".text-part"),
+  email: document.getElementById("email"),
+  scrolling: false,
 
   //initial functions
   init: () => {
@@ -17,8 +19,7 @@ const APP = {
     APP.ham.addEventListener("click", APP.hamClicked);
     APP.nav.addEventListener("click", APP.setNav);
     const cards = document.querySelectorAll(".card-md");
-    document.addEventListener("scroll", APP.scrolled);
-
+    APP.email.addEventListener("click", APP.emailClicked);
     VanillaTilt.init(cards),
       {
         max: 45,
@@ -87,15 +88,53 @@ const APP = {
 
   animationEnd: () => {
     document.body.classList.remove("no-scroll");
+    document.addEventListener("scroll", APP.scrollThrottle);
   },
-  scrolled: () => {},
+  //to avoid throttling during scrolling events
+  scrollThrottle: () => {
+    if (!APP.scrolling) {
+      window.requestAnimationFrame(() => {
+        APP.scrolled();
+        APP.scrolling = false;
+      });
+      APP.scrolling = true;
+    }
+  },
+  scrolled: () => {
+    let about = document.querySelector(".about").getBoundingClientRect();
+    let home = document.querySelector(".home").getBoundingClientRect();
+    let portfolio = document
+      .querySelector(".portfolio")
+      .getBoundingClientRect();
+    let contact = document.querySelector(".contact").getBoundingClientRect();
+    if (about.top <= 25 && about.top >= 0) {
+      APP.setPage("about");
+    }
+    if (home.top <= 15 && home.top >= 0) {
+      APP.setPage("home");
+    }
+    if (portfolio.top <= 30 && portfolio.top >= 0) {
+      APP.setPage("portfolio");
+    }
+    if (contact.top < window.innerHeight) {
+      APP.setPage("contact");
+    }
+  },
   setPage: (hash) => {
     //first load or reload
+    let url = new URL(location.href);
     if (!hash) {
-      let url = new URL(location.href);
       url.hash = "home";
       history.replaceState({}, "", url);
+    } else {
+      url.hash = hash;
+      history.pushState({}, "", url);
+      APP.setNav();
     }
+  },
+  emailClicked: (event) => {
+    event.preventDefault();
+    location.href = "mailto:akshaymahajan81@gmail.com";
   },
 };
 

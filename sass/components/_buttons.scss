@@ -10,7 +10,7 @@
 
 .btn:hover,
 .btn:focus {
-  background-color: $color-secondary;
+  background-color: $color-accent-hover;
 }
 
 //icons
@@ -102,7 +102,7 @@
   }
   &:hover,
   &:focus {
-    background-color: $color-accent;
+    background-color: $color-secondary-hover;
   }
 }
 .portfolio {
