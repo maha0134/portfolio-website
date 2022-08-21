@@ -107,17 +107,18 @@ const APP = {
       .querySelector(".portfolio")
       .getBoundingClientRect();
     let contact = document.querySelector(".contact").getBoundingClientRect();
-    if (about.top <= 25 && about.top >= 0) {
-      APP.setPage("about");
-    }
-    if (home.top <= 15 && home.top >= 0) {
+    if (home.top < window.innerHeight && home.bottom >= 0) {
       APP.setPage("home");
     }
-    if (portfolio.top <= 30 && portfolio.top >= 0) {
-      APP.setPage("portfolio");
+    if (about.top < window.innerHeight / 2 && about.bottom >= 0) {
+      APP.setPage("about");
     }
-    if (contact.top < window.innerHeight) {
-      APP.setPage("contact");
+    if (portfolio.top < window.innerHeight / 2) {
+      if (contact.top < window.innerHeight) {
+        APP.setPage("contact");
+      } else {
+        APP.setPage("portfolio");
+      }
     }
   },
   setPage: (hash) => {
