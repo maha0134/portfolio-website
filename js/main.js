@@ -37,7 +37,7 @@ const APP = {
       .start();
   },
 
-  hamClicked: (event) => {
+  hamClicked: () => {
     APP.nav.classList.toggle("clicked");
     if (APP.nav.classList.contains("clicked")) {
       APP.openDrawer();
@@ -45,6 +45,7 @@ const APP = {
       APP.closeDrawer();
     }
   },
+
   openDrawer: () => {
     APP.ham.textContent = "close";
     APP.nav.style.width = "100vw";
@@ -70,6 +71,7 @@ const APP = {
     APP.ham.textContent = "menu";
   },
 
+  //highlights the currently on-screen section in the nav bar
   setNav: (ev) => {
     if (!ev) {
       let hash = location.hash.toString().slice(1) + "-link";
@@ -78,28 +80,31 @@ const APP = {
     } else {
       const navLink = ev.target.closest("a");
       if (navLink) {
-        document
-          .querySelector(".current-page")
-          .classList.remove("current-page");
-        navLink.classList.add("current-page");
+        // document
+        //   .querySelector(".current-page")
+        //   .classList.remove("current-page");
+        // navLink.classList.add("current-page");
+        let hash = location.hash.toString().slice(1);
+        document.querySelector("." + hash).scrollIntoView();
       }
     }
   },
 
+  //removes window scrolling till the animation completes
   animationEnd: () => {
     document.body.classList.remove("no-scroll");
     document.addEventListener("scroll", APP.scrollThrottle);
   },
+
   //to avoid throttling during scrolling events
   scrollThrottle: () => {
     if (!APP.scrolling) {
-      window.requestAnimationFrame(() => {
-        APP.scrolled();
-        APP.scrolling = false;
-      });
+      setTimeout(APP.scrolled, 500);
       APP.scrolling = true;
     }
   },
+
+  //function that takes care of scrolling
   scrolled: () => {
     let about = document.querySelector(".about").getBoundingClientRect();
     let home = document.querySelector(".home").getBoundingClientRect();
@@ -120,10 +125,12 @@ const APP = {
         APP.setPage("portfolio");
       }
     }
+    APP.scrolling = false;
   },
+  //pushes the current section(hash) to the url
   setPage: (hash) => {
-    //first load or reload
     let url = new URL(location.href);
+    //first load or reload
     if (!hash) {
       url.hash = "home";
       history.replaceState({}, "", url);
@@ -133,6 +140,8 @@ const APP = {
       APP.setNav();
     }
   },
+
+  //function to prevent bots from scrapping personal email
   emailClicked: (event) => {
     event.preventDefault();
     location.href = "mailto:akshaymahajan81@gmail.com";
