@@ -144,11 +144,14 @@ section {
     @media only screen and (min-width: 45em) {
       flex-direction: row;
       gap: 2rem;
-      justify-content: space-between;
-      padding: 3rem 4rem;
+      justify-content: center;
+      padding: 3rem 2rem;
       h3 {
         padding: 0;
       }
+    }
+    @media only screen and (min-width: 87.5em) {
+      // transform: translateX(-12rem);
     }
   }
 }

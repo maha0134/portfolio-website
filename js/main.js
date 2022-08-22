@@ -80,10 +80,6 @@ const APP = {
     } else {
       const navLink = ev.target.closest("a");
       if (navLink) {
-        // document
-        //   .querySelector(".current-page")
-        //   .classList.remove("current-page");
-        // navLink.classList.add("current-page");
         let hash = location.hash.toString().slice(1);
         document.querySelector("." + hash).scrollIntoView();
       }
@@ -99,6 +95,7 @@ const APP = {
   //to avoid throttling during scrolling events
   scrollThrottle: () => {
     if (!APP.scrolling) {
+      //setting a timeout of 500ms for scrolling events
       setTimeout(APP.scrolled, 500);
       APP.scrolling = true;
     }
