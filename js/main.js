@@ -25,16 +25,6 @@ const APP = {
         max: 45,
         speed: 400,
       };
-    let typeWriter = new Typewriter(APP.text, {
-      autoStart: false,
-    });
-    typeWriter
-      .pauseFor(4000)
-      .typeString("Hi! My name is Akshay Mahajan and I love to solve problems.")
-      .pauseFor(1500)
-      .deleteAll(5)
-      .typeString("Here are a few things that I can create:")
-      .start();
   },
 
   hamClicked: () => {
@@ -90,6 +80,7 @@ const APP = {
   animationEnd: () => {
     document.body.classList.remove("no-scroll");
     document.addEventListener("scroll", APP.scrollThrottle);
+    APP.typeWriter();
   },
 
   //to avoid throttling during scrolling events
@@ -136,6 +127,19 @@ const APP = {
       history.pushState({}, "", url);
       APP.setNav();
     }
+  },
+
+  typeWriter: () => {
+    let typeWriter = new Typewriter(APP.text, {
+      autoStart: false,
+    });
+    typeWriter
+      .pauseFor(2000)
+      .typeString("Hi! My name is Akshay Mahajan and I love to solve problems.")
+      .pauseFor(1500)
+      .deleteAll()
+      .typeString("Here are a few things that I can create:")
+      .start();
   },
 
   //function to prevent bots from scrapping personal email
