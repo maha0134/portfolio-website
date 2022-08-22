@@ -135,7 +135,7 @@ const APP = {
     });
     typeWriter
       .pauseFor(2000)
-      .typeString("Hi! My name is Akshay Mahajan and I love to solve problems.")
+      .typeString("Hi! My name is Akshay and I love to solve problems.")
       .pauseFor(1500)
       .deleteAll()
       .typeString("Here are a few things that I can create:")
