@@ -32,7 +32,6 @@
       <li><a href="#about">Skip to about</a></li>
       <li><a href="#portfolio">Skip to portfolio</a></li>
       <li><a href="#contact">Skip to contact</a></li>
-      <li><a href="#foot">Skip to footer</a></li>
     </ul>
     <div class="loader">
       <i>
@@ -86,8 +85,8 @@
       </ul>
       <!-- </div> -->
     </header>
-    <main class="" id="main" tabindex="0">
-      <section class="home" id="home">
+    <main class="" id="main">
+      <section class="home" id="home" tabindex="0">
         <div class="container-inner shadow">
           <h1 class="name">Akshay Mahajan</h1>
           <h4 class="desig">Full Stack Developer</h4>
@@ -146,6 +145,7 @@
               data-tilt-glare
               data-tilt-max-glare="0.4"
               class="card card-md"
+              tabindex="0"
             >
               <div class="visible">
                 <span class="cross">
@@ -165,6 +165,7 @@
               data-tilt-glare
               data-tilt-max-glare="0.4"
               class="card card-md"
+              tabindex="0"
             >
               <div class="visible">
                 <i class="material-icons-outlined"> devices </i>
@@ -181,6 +182,7 @@
               data-tilt-glare
               data-tilt-max-glare="0.4"
               class="card card-md"
+              tabindex="0"
             >
               <div class="visible">
                 <i class="material-icons-outlined"> api </i>
@@ -197,6 +199,7 @@
               data-tilt-glare
               data-tilt-max-glare="0.4"
               class="card card-md"
+              tabindex="0"
             >
               <div class="visible">
                 <i class="material-icons-outlined"> draw </i>
@@ -212,9 +215,9 @@
       </section>
       <section class="portfolio" id="portfolio">
         <div class="container-outer">
-          <h2>Projects</h2>
+          <h2 class="shadow">Projects</h2>
           <ul class="card-container list-unstyled">
-            <li class="project shadow">
+            <li class="project shadow" tabindex="0">
               <h3 class="proj-title">Flutter App</h3>
               <div class="content">
                 <div class="image-wrap">
@@ -255,7 +258,7 @@
                 </div>
               </div>
             </li>
-            <li class="project shadow">
+            <li class="project shadow" tabindex="0">
               <h3 class="proj-title">Node Server</h3>
               <div class="content">
                 <div class="image-wrap desk">
@@ -296,7 +299,7 @@
                 </div>
               </div>
             </li>
-            <li class="project shadow">
+            <li class="project shadow" tabindex="0">
               <h3 class="proj-title">Progressive Web App</h3>
               <div class="content">
                 <div class="image-wrap desk">
@@ -313,6 +316,7 @@
                       href="https://developers.themoviedb.org/3/getting-started/introduction"
                       target="_blank"
                       rel="noopener noreferrer"
+                      class="link"
                       >TMDB API</a
                     >). The offline first PWA uses indexedDB to store and a
                     service worker to cache all results.
@@ -354,7 +358,7 @@
                 </div>
               </div>
             </li>
-            <li class="project shadow">
+            <li class="project shadow" tabindex="0">
               <h3 class="proj-title">Single Page App</h3>
               <div class="content">
                 <div class="image-wrap desk">
@@ -446,7 +450,12 @@
           </div>
         </div>
       </section>
-      <section class="foot" id="foot">&copy; Akshay Mahajan 2022</section>
+      <section class="foot" id="foot">
+        &copy; Akshay Mahajan 2022
+        <a href="#main">
+          <span class="material-icons-round md-48"> north </span></a
+        >
+      </section>
     </main>
     <script src="./js/vanilla-tilt.js"></script>
     <script src="./js/core.js"></script>

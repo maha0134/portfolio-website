@@ -9,7 +9,8 @@
 // Transitions
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn:active {
   background-color: $color-accent-hover;
 }
 

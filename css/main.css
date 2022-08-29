@@ -97,22 +97,22 @@
     transform: translateY(110%);
     transition: all 0.35s linear;
   }
-  .card-container .card-md:hover {
+  .card-container .card-md:hover, .card-container .card-md:focus {
     cursor: pointer;
   }
-  .card-container .card-md:hover .visible {
+  .card-container .card-md:hover .visible, .card-container .card-md:focus .visible {
     transform: translateY(0);
     background-color: inherit;
   }
-  .card-container .card-md:hover .visible .labels {
+  .card-container .card-md:hover .visible .labels, .card-container .card-md:focus .visible .labels {
     opacity: 0;
   }
-  .card-container .card-md:hover .invisible {
+  .card-container .card-md:hover .invisible, .card-container .card-md:focus .invisible {
     opacity: 1;
     z-index: 1;
     transform: translateY(-2rem);
   }
-  .card-container .card-md:hover .invisible.extra {
+  .card-container .card-md:hover .invisible.extra, .card-container .card-md:focus .invisible.extra {
     transform: translateY(-2rem);
   }
 }
@@ -294,8 +294,9 @@
 }
 
 .btn:hover,
-.btn:focus {
-  background-color: rgb(230, 33, 102);
+.btn:focus,
+.btn:active {
+  background-color: rgb(217, 33, 97);
 }
 
 .material-icons-outlined.md-32 {
@@ -395,7 +396,7 @@
 .btn-email:hover, .btn-email:focus,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background-color: rgb(0, 207, 210);
+  background-color: rgb(2, 181, 184);
 }
 
 .portfolio .btn-secondary {
@@ -640,11 +641,34 @@
   top: -200rem;
   z-index: 1000;
   text-align: center;
-  font-weight: bold;
+  transition: top 0.25s linear;
+  font-size: 1.75rem;
+  padding: 0.5rem;
 }
 .skip-links a:focus {
   top: 0;
-  font-size: 1.5rem;
+}
+
+*:focus {
+  outline: 0.125rem rgb(246, 74, 128) solid;
+  outline-offset: 0.25rem;
+}
+
+.material-icons-round.md-48 {
+  font-size: 40px;
+  color: rgb(246, 74, 128);
+  background-color: hsla(0deg, 0%, 100%, 0.272);
+  opacity: 0.6;
+  border-radius: 0.35rem;
+  padding: 0.25rem;
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  transition: background-color 0.25s linear, opacity 0.25s linear;
+}
+.material-icons-round.md-48:focus, .material-icons-round.md-48:hover {
+  opacity: 1;
+  background-color: rgb(0, 251, 255);
 }
 
 html {
@@ -857,6 +881,10 @@ section:nth-child(3) {
 
 p {
   font-size: 1.5rem;
+}
+
+a.link {
+  color: rgb(246, 74, 128);
 }
 
 h1 {

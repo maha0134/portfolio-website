@@ -11,11 +11,34 @@
     top: -200rem;
     z-index: 1000;
     text-align: center;
-    font-weight: bold;
+    transition: top 0.25s linear;
+    font-size: 1.75rem;
+    padding: 0.5rem;
   }
 
   a:focus {
     top: 0;
-    font-size: 1.5rem;
+  }
+}
+*:focus {
+  outline: 0.125rem $color-accent solid;
+  outline-offset: 0.25rem;
+}
+
+.material-icons-round.md-48 {
+  font-size: 40px;
+  color: $color-accent;
+  background-color: $color-primary-light;
+  opacity: 0.6;
+  border-radius: 0.35rem;
+  padding: 0.25rem;
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  transition: background-color 0.25s linear, opacity 0.25s linear;
+  &:focus,
+  &:hover {
+    opacity: 1;
+    background-color: $color-secondary;
   }
 }
