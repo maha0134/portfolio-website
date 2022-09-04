@@ -11,7 +11,7 @@ main {
   position: relative;
   background-position: center;
   background-size: 100vw 100vh;
-  background-repeat: repeat;
+  background-repeat: round;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../images/background-phone.png");
   @media only screen and (min-width: 40em) {
@@ -99,14 +99,6 @@ section {
   }
 }
 
-.illustrator,
-.css,
-.html {
-  height: 3rem;
-  width: 3rem;
-  opacity: 0.5;
-}
-
 .about {
   .container-outer {
     max-width: min(90em, 100%);
@@ -121,7 +113,7 @@ section {
   .text-part {
     padding: 1rem;
     width: 90%;
-    margin: 2rem auto;
+    margin: 0 auto 2rem;
   }
 
   @media only screen and (min-width: 87.5em) {

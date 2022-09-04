@@ -29,6 +29,9 @@ const APP = {
 
   hamClicked: () => {
     APP.nav.classList.toggle("clicked");
+    APP.ham.children[0].classList.toggle("rotate-left");
+    APP.ham.children[1].classList.toggle("vanish");
+    APP.ham.children[2].classList.toggle("rotate-right");
     if (APP.nav.classList.contains("clicked")) {
       APP.openDrawer();
     } else {
@@ -37,7 +40,7 @@ const APP = {
   },
 
   openDrawer: () => {
-    APP.ham.textContent = "close";
+    // APP.ham.textContent = "close";
     APP.nav.style.width = "100vw";
     document.body.classList.add("blur");
     if (APP.nav.classList.contains("width")) {
@@ -58,7 +61,7 @@ const APP = {
     document.body.classList.remove("blur");
     APP.nav.style.width = "";
     APP.nav.classList.add("width");
-    APP.ham.textContent = "menu";
+    // APP.ham.textContent = "menu";
   },
 
   //highlights the currently on-screen section in the nav bar

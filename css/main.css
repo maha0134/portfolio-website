@@ -547,17 +547,40 @@
   transition: width 0.35s linear;
 }
 .nav-bar i {
+  display: flex;
+  gap: 0.45rem;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
   background-color: hsl(0deg, 0%, 0%);
-  border-radius: 10px;
   position: fixed;
   top: 1rem;
   z-index: 2;
   right: 1rem;
-  color: rgb(246, 74, 128);
   transform: translate(0);
   opacity: 1;
   transition: 0.5s linear;
-  font-size: 48px;
+}
+.nav-bar i .line {
+  width: 2.25rem;
+  height: 0.3rem;
+  background-color: rgb(246, 74, 128);
+  text-align: right;
+  border-radius: 1rem;
+  opacity: 1;
+  transform-origin: center;
+  transform: rotate(0) translate(0);
+  transition: transform 0.25s linear, opacity 0.15s linear;
+}
+.nav-bar i .upper-line.rotate-left {
+  transform: translateY(0.75rem) rotate(135deg);
+  background-color: white;
+}
+.nav-bar i .center-line.vanish {
+  opacity: 0;
+}
+.nav-bar i .lower-line.rotate-right {
+  transform: translateY(-0.75rem) rotate(-135deg);
 }
 .nav-bar i:hover {
   cursor: pointer;
@@ -710,7 +733,7 @@ main {
   position: relative;
   background-position: center;
   background-size: 100vw 100vh;
-  background-repeat: repeat;
+  background-repeat: round;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background-phone.png");
 }
 @media only screen and (min-width: 40em) {
@@ -802,14 +825,6 @@ section:nth-child(3) {
   font-family: "JetBrains Mono", monospace;
 }
 
-.illustrator,
-.css,
-.html {
-  height: 3rem;
-  width: 3rem;
-  opacity: 0.5;
-}
-
 .about {
   text-align: center;
   display: flex;
@@ -825,7 +840,7 @@ section:nth-child(3) {
 .about .text-part {
   padding: 1rem;
   width: 90%;
-  margin: 2rem auto;
+  margin: 0 auto 2rem;
 }
 @media only screen and (min-width: 87.5em) {
   .about {
