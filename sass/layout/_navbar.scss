@@ -74,7 +74,7 @@
       color: $color-secondary;
       min-height: 2rem;
       padding: 1rem 2rem;
-
+      max-width: min(65em, 100%);
       a {
         display: inline-block;
         transition: transform 0.15s linear, color 0.15s linear;

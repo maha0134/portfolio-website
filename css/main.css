@@ -619,6 +619,7 @@
     color: rgb(0, 251, 255);
     min-height: 2rem;
     padding: 1rem 2rem;
+    max-width: min(65em, 100%);
   }
   .nav-bar .nav a {
     display: inline-block;
