@@ -306,9 +306,14 @@
 .icons {
   display: flex;
   gap: 1rem;
-  align-self: flex-end;
+  align-self: center;
   animation: icons linear 1s 5s forwards;
   opacity: 0;
+}
+@media only screen and (min-width: 40em) {
+  .icons {
+    align-self: flex-end;
+  }
 }
 .icons a {
   text-decoration: none;
@@ -820,9 +825,14 @@ section:nth-child(3) {
   transform: translateX(-20rem);
   animation: slide-right linear 1s 4.5s forwards;
   display: flex;
-  align-self: flex-end;
+  align-self: center;
   text-align: right;
   font-family: "JetBrains Mono", monospace;
+}
+@media only screen and (min-width: 40em) {
+  .home .desig {
+    align-self: flex-end;
+  }
 }
 
 .about {

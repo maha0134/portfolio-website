@@ -24,8 +24,10 @@
 .icons {
   display: flex;
   gap: 1rem;
-  align-self: flex-end;
-  // margin-right: 2rem;
+  align-self: center;
+  @media only screen and (min-width: 40em) {
+    align-self: flex-end;
+  }
   animation: icons linear 1s 5s forwards;
   opacity: 0;
   a {

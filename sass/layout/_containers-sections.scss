@@ -93,7 +93,10 @@ section {
     transform: translateX(-20rem);
     animation: slide-right linear 1s 4.5s forwards;
     display: flex;
-    align-self: flex-end;
+    align-self: center;
+    @media only screen and (min-width: 40em) {
+      align-self: flex-end;
+    }
     text-align: right;
     font-family: "JetBrains Mono", monospace;
   }
