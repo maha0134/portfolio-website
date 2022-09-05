@@ -63,8 +63,6 @@ const APP = {
     APP.ham.children[1].classList.add("vanish");
     APP.ham.children[2].classList.add("rotate-right");
     APP.nav.style.width = "100vw";
-    Ap;
-
     APP.nav.ariaHidden = "false";
     document.body.classList.add("blur");
     if (APP.nav.classList.contains("width")) {
