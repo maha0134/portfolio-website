@@ -27,6 +27,7 @@
   align-self: center;
   @media only screen and (min-width: 40em) {
     align-self: flex-end;
+    gap: 1.5rem;
   }
   animation: icons linear 1s 5s forwards;
   opacity: 0;
@@ -36,11 +37,11 @@
   }
   i {
     @media only screen and (min-width: 40em) {
-      width: 2rem;
-      height: 2rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     border: 1px $color-primary solid;
     svg {
       background-color: $color-primary;

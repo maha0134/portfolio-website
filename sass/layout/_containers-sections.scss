@@ -94,10 +94,11 @@ section {
     animation: slide-right linear 1s 4.5s forwards;
     display: flex;
     align-self: center;
+    text-align: center;
     @media only screen and (min-width: 40em) {
       align-self: flex-end;
+      text-align: right;
     }
-    text-align: right;
     font-family: "JetBrains Mono", monospace;
   }
 }

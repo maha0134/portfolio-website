@@ -313,6 +313,7 @@
 @media only screen and (min-width: 40em) {
   .icons {
     align-self: flex-end;
+    gap: 1.5rem;
   }
 }
 .icons a {
@@ -320,14 +321,14 @@
   display: flex;
 }
 .icons i {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   border: 1px hsl(0deg, 0%, 100%) solid;
 }
 @media only screen and (min-width: 40em) {
   .icons i {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 .icons i svg {
@@ -699,6 +700,11 @@
   background-color: rgb(0, 251, 255);
 }
 
+.screen-reader-text {
+  position: absolute;
+  clip-path: polygon(0 0, 0 0.1%, 0.1% 0.1%, 0.1% 0);
+}
+
 html {
   box-sizing: border-box;
   line-height: 1.5;
@@ -826,12 +832,13 @@ section:nth-child(3) {
   animation: slide-right linear 1s 4.5s forwards;
   display: flex;
   align-self: center;
-  text-align: right;
+  text-align: center;
   font-family: "JetBrains Mono", monospace;
 }
 @media only screen and (min-width: 40em) {
   .home .desig {
     align-self: flex-end;
+    text-align: right;
   }
 }
 
@@ -923,7 +930,8 @@ h2 {
   font-size: 2.441rem;
 }
 
-h3 {
+h3,
+.desig {
   font-size: 1.953rem;
 }
 
@@ -969,7 +977,8 @@ h4 {
   h2 {
     font-size: 3.157rem;
   }
-  h3 {
+  h3,
+.desig {
     font-size: 2.369rem;
   }
   h4 {

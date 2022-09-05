@@ -42,3 +42,8 @@
     background-color: $color-secondary;
   }
 }
+
+.screen-reader-text {
+  position: absolute;
+  clip-path: $clip-path;
+}
