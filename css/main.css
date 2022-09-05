@@ -559,6 +559,8 @@
   text-align: right;
   align-items: flex-end;
   background-color: hsl(0deg, 0%, 0%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   position: fixed;
   top: 1rem;
   z-index: 2;
