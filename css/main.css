@@ -307,7 +307,7 @@
   display: flex;
   gap: 1rem;
   align-self: center;
-  animation: icons linear 1s 5s forwards;
+  animation: icons linear 0.5s 4.5s forwards;
   opacity: 0;
 }
 @media only screen and (min-width: 40em) {
@@ -823,13 +823,13 @@ section:nth-child(3) {
   display: inline-block;
   opacity: 0;
   transform: translateY(5rem);
-  animation: slide-up 0.75s 4s ease-in forwards, bounce linear infinite 2s;
+  animation: slide-up 0.5s 3.5s ease-in forwards, bounce linear infinite 2s 5s;
   display: inline-block;
 }
 .home .desig {
   opacity: 0;
   transform: translateX(-20rem);
-  animation: slide-right linear 1s 4.5s forwards;
+  animation: slide-right linear 0.5s 4s forwards;
   display: flex;
   align-self: center;
   text-align: center;
