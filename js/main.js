@@ -63,6 +63,9 @@ const APP = {
     APP.ham.children[1].classList.add("vanish");
     APP.ham.children[2].classList.add("rotate-right");
     APP.nav.style.width = "100vw";
+    Ap;
+
+    APP.nav.ariaHidden = "false";
     document.body.classList.add("blur");
     if (APP.nav.classList.contains("width")) {
       APP.nav.classList.remove("width");
@@ -78,6 +81,7 @@ const APP = {
         APP.closeDrawer(ev);
       });
     }
+    APP.nav.ariaHidden = "true";
     APP.ham.children[0].classList.remove("rotate-left");
     APP.ham.children[1].classList.remove("vanish");
     APP.ham.children[2].classList.remove("rotate-right");

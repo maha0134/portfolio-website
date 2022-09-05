@@ -5,9 +5,6 @@
   text-align: center;
 }
 main {
-  // scroll-snap-type: y proximity;
-  // height: 100vh;
-  // overflow-y: scroll;
   position: relative;
   background-position: center;
   background-size: 100vw 100vh;
@@ -32,7 +29,6 @@ main {
 
 section {
   color: $color-primary;
-  // scroll-snap-align: start;
   &:not(:nth-of-type(4), :nth-of-type(5)) {
     scroll-margin: 2rem;
     min-height: 100vh;
