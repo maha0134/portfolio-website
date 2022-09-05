@@ -14,17 +14,39 @@ const APP = {
     } else {
       APP.setNav(false);
     }
-
     APP.loader.addEventListener("animationend", APP.animationEnd);
+  },
+
+  addListenersAndEffects: () => {
+    APP.bigScreenEffects(false);
+    document.addEventListener("scroll", APP.scrollThrottle);
+    window.addEventListener("resize", APP.bigScreenEffects);
     APP.ham.addEventListener("click", APP.hamClicked);
     APP.nav.addEventListener("click", APP.setNav);
-    const cards = document.querySelectorAll(".card-md");
     APP.email.addEventListener("click", APP.emailClicked);
-    VanillaTilt.init(cards),
-      {
-        max: 45,
-        speed: 400,
-      };
+  },
+
+  bigScreenEffects: (event) => {
+    const cards = document.querySelectorAll(".card-md");
+    if (window.innerWidth > 640) {
+      APP.typeWriter(true);
+      cards.forEach((card) => {
+        VanillaTilt.init(card, {
+          speed: 400,
+          glare: true,
+          "max-glare": 0.4,
+          scale: 1.1,
+        });
+      });
+    } else {
+      if (event) {
+        APP.typeWriter(false);
+        cards.forEach((card) => card.vanillaTilt.destroy());
+      } else {
+        APP.text.textContent =
+          "Hi! My name is Akshay and I love to solve problems. Here are a few things that I can create:";
+      }
+    }
   },
 
   hamClicked: () => {
@@ -83,8 +105,7 @@ const APP = {
   //removes window scrolling till the animation completes
   animationEnd: () => {
     document.body.classList.remove("no-scroll");
-    document.addEventListener("scroll", APP.scrollThrottle);
-    APP.typeWriter();
+    APP.addListenersAndEffects();
   },
 
   //to avoid throttling during scrolling events
@@ -133,17 +154,23 @@ const APP = {
     }
   },
 
-  typeWriter: () => {
+  typeWriter: (status) => {
     let typeWriter = new Typewriter(APP.text, {
       autoStart: false,
     });
-    typeWriter
-      .pauseFor(2000)
-      .typeString("Hi! My name is Akshay and I love to solve problems.")
-      .pauseFor(1500)
-      .deleteAll()
-      .typeString("Here are a few things that I can create:")
-      .start();
+    if (status) {
+      typeWriter
+        .pauseFor(2000)
+        .typeString("Hi! My name is Akshay and I love to solve problems.")
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString("Here are a few things that I can create:")
+        .start();
+    } else {
+      typeWriter.stop();
+      APP.text.textContent =
+        "Hi! My name is Akshay and I love to solve problems. Here are a few things that I can create:";
+    }
   },
 
   //function to prevent bots from scrapping personal email
