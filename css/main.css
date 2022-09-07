@@ -771,7 +771,7 @@ main {
 section {
   color: hsl(0deg, 0%, 100%);
 }
-section:not(:nth-of-type(4), :nth-of-type(5)) {
+section:not(:nth-of-type(4)) {
   scroll-margin: 2rem;
   min-height: 100vh;
 }
