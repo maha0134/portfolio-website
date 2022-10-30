@@ -16,11 +16,11 @@
     padding: 0.5rem;
   }
 
-  a:focus {
+  a:focus-visible {
     top: 0;
   }
 }
-*:focus {
+*:focus-visible {
   outline: 0.125rem $color-accent solid;
   outline-offset: 0.25rem;
 }

@@ -97,22 +97,22 @@
     transform: translateY(110%);
     transition: all 0.35s linear;
   }
-  .card-container .card-md:hover, .card-container .card-md:focus {
+  .card-container .card-md:hover, .card-container .card-md:focus-visible {
     cursor: pointer;
   }
-  .card-container .card-md:hover .visible, .card-container .card-md:focus .visible {
+  .card-container .card-md:hover .visible, .card-container .card-md:focus-visible .visible {
     transform: translateY(0);
     background-color: inherit;
   }
-  .card-container .card-md:hover .visible .labels, .card-container .card-md:focus .visible .labels {
+  .card-container .card-md:hover .visible .labels, .card-container .card-md:focus-visible .visible .labels {
     opacity: 0;
   }
-  .card-container .card-md:hover .invisible, .card-container .card-md:focus .invisible {
+  .card-container .card-md:hover .invisible, .card-container .card-md:focus-visible .invisible {
     opacity: 1;
     z-index: 1;
     transform: translateY(-2rem);
   }
-  .card-container .card-md:hover .invisible.extra, .card-container .card-md:focus .invisible.extra {
+  .card-container .card-md:hover .invisible.extra, .card-container .card-md:focus-visible .invisible.extra {
     transform: translateY(-2rem);
   }
 }
@@ -294,7 +294,7 @@
 }
 
 .btn:hover,
-.btn:focus,
+.btn:focus-visible,
 .btn:active {
   background-color: rgb(217, 33, 97);
 }
@@ -399,9 +399,9 @@
 .btn-secondary i {
   font-size: 32px;
 }
-.btn-email:hover, .btn-email:focus,
+.btn-email:hover, .btn-email:focus-visible,
 .btn-secondary:hover,
-.btn-secondary:focus {
+.btn-secondary:focus-visible {
   background-color: rgb(2, 181, 184);
 }
 
@@ -677,11 +677,11 @@
   font-size: 1.75rem;
   padding: 0.5rem;
 }
-.skip-links a:focus {
+.skip-links a:focus-visible {
   top: 0;
 }
 
-*:focus {
+*:focus-visible {
   outline: 0.125rem rgb(246, 74, 128) solid;
   outline-offset: 0.25rem;
 }
@@ -920,6 +920,7 @@ p {
 
 a.link {
   color: rgb(246, 74, 128);
+  text-decoration: underline;
 }
 
 h1 {

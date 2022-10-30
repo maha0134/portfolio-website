@@ -9,7 +9,7 @@
 // Transitions
 
 .btn:hover,
-.btn:focus,
+.btn:focus-visible,
 .btn:active {
   background-color: $color-accent-hover;
 }
@@ -105,7 +105,7 @@
     font-size: 32px;
   }
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-color: $color-secondary-hover;
   }
 }
