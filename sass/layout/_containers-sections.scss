@@ -142,9 +142,13 @@ section {
   }
 
   .headings {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     h3 {
       cursor: pointer;
       transition: all 0.25s;
+      padding: 0.5rem 2rem;
       margin-top: 0;
       &:hover,
       &:focus-visible {
@@ -153,12 +157,11 @@ section {
     }
     h3.selected {
       text-decoration: underline;
-      color: $color-accent;
+      color: $color-background;
+      background-color: $color-accent;
     }
     @media only screen and (min-width: 45em) {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
+      gap: 2.5rem;
     }
   }
 }

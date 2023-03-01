@@ -882,9 +882,15 @@ section:nth-child(3) {
 .portfolio .card-container.show-mobile .mobile {
   display: flex;
 }
+.portfolio .headings {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 .portfolio .headings h3 {
   cursor: pointer;
   transition: all 0.25s;
+  padding: 0.5rem 2rem;
   margin-top: 0;
 }
 .portfolio .headings h3:hover, .portfolio .headings h3:focus-visible {
@@ -892,13 +898,12 @@ section:nth-child(3) {
 }
 .portfolio .headings h3.selected {
   text-decoration: underline;
-  color: rgb(246, 74, 128);
+  color: hsl(0deg, 0%, 0%);
+  background-color: rgb(246, 74, 128);
 }
 @media only screen and (min-width: 45em) {
   .portfolio .headings {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 }
 
