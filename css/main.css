@@ -349,6 +349,12 @@
   max-height: 2rem;
   background-color: rgb(246, 74, 128);
 }
+.portfolio .closing {
+  margin-top: 3rem;
+}
+.portfolio .portfolio-btn {
+  display: inline-block;
+}
 
 .btn-accent,
 .btn-email,
