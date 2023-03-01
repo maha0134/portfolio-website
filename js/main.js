@@ -5,6 +5,8 @@ const APP = {
   loader: document.querySelector(".loader"),
   text: document.querySelector(".text-part"),
   email: document.getElementById("email"),
+  headings: document.querySelector(".headings"),
+  list: document.querySelector(".portfolio .card-container"),
   scrolling: false,
 
   //initial functions
@@ -24,6 +26,7 @@ const APP = {
     APP.ham.addEventListener("click", APP.hamClicked);
     APP.nav.addEventListener("click", APP.setNav);
     APP.email.addEventListener("click", APP.emailClicked);
+    APP.headings.addEventListener("click", APP.headingClicked);
   },
 
   bigScreenEffects: (event) => {
@@ -179,6 +182,20 @@ const APP = {
   emailClicked: (event) => {
     event.preventDefault();
     location.href = "mailto:akshaymahajan81@gmail.com";
+  },
+
+  headingClicked: (event) => {
+    const clickedHeading = event.target.closest("h3");
+    if (clickedHeading) {
+      if (clickedHeading.classList.contains("selected")) return;
+      document.querySelector("h3.selected").classList.remove("selected");
+      clickedHeading.classList.add("selected");
+      if (clickedHeading.id === "web") {
+        APP.list.classList.remove("show-mobile");
+      } else {
+        APP.list.classList.add("show-mobile");
+      }
+    }
   },
 };
 

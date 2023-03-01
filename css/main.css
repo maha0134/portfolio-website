@@ -870,6 +870,38 @@ section:nth-child(3) {
   }
 }
 
+.portfolio .card-container .mobile {
+  display: none;
+}
+.portfolio .card-container .web {
+  display: flex;
+}
+.portfolio .card-container.show-mobile .web {
+  display: none;
+}
+.portfolio .card-container.show-mobile .mobile {
+  display: flex;
+}
+.portfolio .headings h3 {
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 0;
+}
+.portfolio .headings h3:hover, .portfolio .headings h3:focus-visible {
+  color: rgb(217, 33, 97);
+}
+.portfolio .headings h3.selected {
+  text-decoration: underline;
+  color: rgb(246, 74, 128);
+}
+@media only screen and (min-width: 45em) {
+  .portfolio .headings {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
 .contact {
   background-color: hsl(0deg, 0%, 7%);
 }
