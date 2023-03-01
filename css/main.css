@@ -123,7 +123,6 @@
     grid-template-rows: repeat(5, 1fr);
   }
   .about .card-container .card-md {
-    padding: 0.5rem;
     line-height: 1.2;
     margin: 1rem;
   }
@@ -252,7 +251,7 @@
 }
 @media only screen and (min-width: 45em) {
   .portfolio .project:nth-child(odd) .text .btn,
-.portfolio .project:nth-child(odd) .text .buttons {
+  .portfolio .project:nth-child(odd) .text .buttons {
     align-self: flex-end;
   }
 }
@@ -274,7 +273,7 @@
 }
 @media only screen and (min-width: 45em) {
   .portfolio .project:nth-child(even) .text .btn,
-.portfolio .project:nth-child(even) .text .buttons {
+  .portfolio .project:nth-child(even) .text .buttons {
     align-self: flex-start;
   }
 }
@@ -871,6 +870,38 @@ section:nth-child(3) {
   }
 }
 
+.portfolio .card-container .mobile {
+  display: none;
+}
+.portfolio .card-container .web {
+  display: flex;
+}
+.portfolio .card-container.show-mobile .web {
+  display: none;
+}
+.portfolio .card-container.show-mobile .mobile {
+  display: flex;
+}
+.portfolio .headings h3 {
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 0;
+}
+.portfolio .headings h3:hover, .portfolio .headings h3:focus-visible {
+  color: rgb(217, 33, 97);
+}
+.portfolio .headings h3.selected {
+  text-decoration: underline;
+  color: rgb(246, 74, 128);
+}
+@media only screen and (min-width: 45em) {
+  .portfolio .headings {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
 .contact {
   background-color: hsl(0deg, 0%, 7%);
 }
@@ -982,7 +1013,7 @@ h4 {
     font-size: 3.157rem;
   }
   h3,
-.desig {
+  .desig {
     font-size: 2.369rem;
   }
   h4 {

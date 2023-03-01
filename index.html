@@ -158,21 +158,21 @@
                   <i class="material-icons-outlined"> android </i>
                   <i class="material-icons-outlined"> phone_iphone </i>
                 </span>
-                <p class="labels">Cross Platform Mobile Apps</p>
+                <p class="labels">Native + Cross Platform Mobile Apps</p>
               </div>
               <p class="invisible extra">
-                I can develop Full Stack cross platform mobile apps using
-                Flutter and Node js.
+                I can develop mobile apps using Swift, Kotlin, React Native and
+                Flutter.
               </p>
             </div>
             <div class="card card-md" tabindex="0">
               <div class="visible">
                 <i class="material-icons-outlined"> devices </i>
-                <p class="labels">Responsive Websites</p>
+                <p class="labels">Responsive Websites using React</p>
               </div>
               <p class="invisible">
                 I can create responsive websites that work well across mobiles,
-                tabs and desktops.
+                tabs and desktops using React.js.
               </p>
             </div>
             <div class="card card-md" tabindex="0">
@@ -188,7 +188,7 @@
             <div class="card card-md" tabindex="0">
               <div class="visible">
                 <i class="material-icons-outlined"> draw </i>
-                <p class="labels">UI Designer</p>
+                <p class="labels">UI/UX Designer</p>
               </div>
               <p class="invisible">
                 I can create content using Adobe softwares following Material
@@ -201,29 +201,40 @@
       <section class="portfolio" id="portfolio">
         <div class="container-outer">
           <h2 class="shadow">Projects</h2>
+          <div class="headings shadow">
+            <h3 class="selected" id="web">Web</h3>
+            <h3 class="" id="mobile">Mobile</h3>
+          </div>
           <ul class="card-container list-unstyled">
-            <li class="project shadow" tabindex="0">
+            <li class="project shadow web" tabindex="0">
               <h3 class="proj-title">React Weather App</h3>
               <div class="content">
                 <div class="image-wrap desk">
                   <img
-                    src="./images/weather-app.gif"
+                    src="./images/react-weather.png"
                     alt="gif of react weather app"
                   />
                 </div>
                 <div class="text">
                   <p class="details">
-                    A weather app created using React.js that uses <a
-                    href="https://locationiq.com/docs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link"
-                    >locationIQ API</a> to fetch coordinates and <a
-                    href="https://openweathermap.org/api"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="link"
-                    >Weather API</a> to fetch current, hourly and daily weather details for any searched location.
+                    A weather app created using React.js that uses
+                    <a
+                      href="https://locationiq.com/docs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="link"
+                      >locationIQ API</a
+                    >
+                    to fetch coordinates and
+                    <a
+                      href="https://openweathermap.org/api"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="link"
+                      >Weather API</a
+                    >
+                    to fetch current, hourly and daily weather details for any
+                    searched location.
                   </p>
                   <div class="buttons">
                     <div class="btn btn-secondary">
@@ -262,89 +273,60 @@
                 </div>
               </div>
             </li>
-            <li class="project shadow" tabindex="0">
-              <h3 class="proj-title">Flutter App</h3>
-              <div class="content">
-                <div class="image-wrap">
-                  <img
-                    src="./images/flutter.gif"
-                    alt="gif containing screenshots of app"
-                  />
-                </div>
-                <div class="text">
-                  <p class="details">
-                    A cross platform multi-screen application built using
-                    Flutter that allows you to add gifting ideas for your
-                    friends. It uses a Node server in the backend that stores
-                    all information.
-                  </p>
-                  <div class="btn btn-accent">
-                    <a
-                      href="https://github.com/maha0134/giftr-front-end"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i>
-                        <svg
-                          id="Final_Icons"
-                          data-name="Final Icons"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 256 256"
-                        >
-                          <path
-                            d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
-                            style="fill-rule: evenodd"
-                          />
-                        </svg>
-                      </i>
-                      Github
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="project shadow" tabindex="0">
-              <h3 class="proj-title">Node Server</h3>
+            <li class="project shadow web" tabindex="0">
+              <h3 class="proj-title">GiftBox</h3>
               <div class="content">
                 <div class="image-wrap desk">
                   <img
-                    src="./images/mongodb document.png"
-                    alt="screenshot of mongoDB document"
+                    src="./images/giftBox.png"
+                    alt="screenshot of a website"
                   />
                 </div>
                 <div class="text">
                   <p class="details">
-                    The backend of the Flutter App created using Node.js that
-                    uses mongoDB and is capable of adding and authenticating
-                    users. It uses CRUD routes to perform operations on its
-                    collections.
+                    A website that lets you add birthday details and gift ideas
+                    for your friends and family. The app uses Firebase as its
+                    backend to let users authenticate using Github and store
+                    gift and people details.
                   </p>
-                  <div class="btn btn-accent">
-                    <a
-                      href="https://github.com/maha0134/giftr-backend"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i>
-                        <svg
-                          id="Final_Icons"
-                          data-name="Final Icons"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 256 256"
-                        >
-                          <path
-                            d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
-                            style="fill-rule: evenodd"
-                          />
-                        </svg>
-                      </i>
-                      Github
-                    </a>
+                  <div class="buttons">
+                    <div class="btn btn-secondary">
+                      <a
+                        href="https://maha0134.github.io/firebase-giftr/dist/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="material-icons-outlined"> open_in_new </i>
+                        Website
+                      </a>
+                    </div>
+                    <div class="btn btn-accent">
+                      <a
+                        href="https://github.com/maha0134/firebase-giftr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i>
+                          <svg
+                            id="Final_Icons"
+                            data-name="Final Icons"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 256 256"
+                          >
+                            <path
+                              d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
+                              style="fill-rule: evenodd"
+                            />
+                          </svg>
+                        </i>
+                        Github
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </li>
-            <li class="project shadow" tabindex="0">
+            <li class="project shadow web" tabindex="0">
               <h3 class="proj-title">Progressive Web App</h3>
               <div class="content">
                 <div class="image-wrap desk">
@@ -403,7 +385,175 @@
                 </div>
               </div>
             </li>
+            <li class="project shadow mobile" tabindex="0">
+              <h3 class="proj-title">React Native app</h3>
+              <div class="content">
+                <div class="image-wrap desk">
+                  <img
+                    src="./images/screen-morpheus.png"
+                    alt="screen of app on a samsung device"
+                  />
+                </div>
+                <div class="text">
+                  <p class="details">
+                    A dream logging app called Morpheus, built using React
+                    Native that allows the user to add dream details every day,
+                    creating a log. It offers customization of background and
+                    display name and uses various React Native and expo
+                    components and APIs.
+                  </p>
+                  <div class="btn btn-accent">
+                    <a
+                      href="https://github.com/maha0134/mad9135-p2-react-native-final"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i>
+                        <svg
+                          id="Final_Icons"
+                          data-name="Final Icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
+                            style="fill-rule: evenodd"
+                          />
+                        </svg>
+                      </i>
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project shadow mobile" tabindex="0">
+              <h3 class="proj-title">iOS Git Searcher</h3>
+              <div class="content">
+                <div class="image-wrap desk">
+                  <img
+                    src="./images/ios-git-searcher.png"
+                    alt="screenshot of an ios app"
+                  />
+                </div>
+                <div class="text">
+                  <p class="details">
+                    A SWIFTUI based native iOS application that lets users
+                    search for github profiles. The search parameters can be
+                    customized by the user to reflect minimum repos and
+                    followers as well maximum results per page. The app uses
+                    Alamofire for fetches and is optimized to work in all
+                    orientations on iPhones as well as iPads.
+                  </p>
+                  <div class="btn btn-accent">
+                    <a
+                      href="https://github.com/maha0134/ios-git-searcher"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i>
+                        <svg
+                          id="Final_Icons"
+                          data-name="Final Icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
+                            style="fill-rule: evenodd"
+                          />
+                        </svg>
+                      </i>
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li class="project shadow" tabindex="0">
+              <h3 class="proj-title">Node Server</h3>
+              <div class="content">
+                <div class="image-wrap desk">
+                  <img
+                    src="./images/mongodb document.png"
+                    alt="screenshot of mongoDB document"
+                  />
+                </div>
+                <div class="text">
+                  <p class="details">
+                    The backend of a Flutter App created using Node.js and
+                    mongoDB that performs CRUD operations on its collections. It
+                    is also capable of adding and authenticating users.
+                  </p>
+                  <div class="btn btn-accent">
+                    <a
+                      href="https://github.com/maha0134/giftr-backend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i>
+                        <svg
+                          id="Final_Icons"
+                          data-name="Final Icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
+                            style="fill-rule: evenodd"
+                          />
+                        </svg>
+                      </i>
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- <li class="project shadow" tabindex="0">
+              <h3 class="proj-title">Flutter App</h3>
+              <div class="content">
+                <div class="image-wrap">
+                  <img
+                    src="./images/flutter.gif"
+                    alt="gif containing screenshots of app"
+                  />
+                </div>
+                <div class="text">
+                  <p class="details">
+                    A cross platform mobile application built using Flutter that
+                    allows you to add gifting ideas for your friends. It uses a
+                    Node server in the backend that stores all information on
+                    mongoDB.
+                  </p>
+                  <div class="btn btn-accent">
+                    <a
+                      href="https://github.com/maha0134/giftr-front-end"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i>
+                        <svg
+                          id="Final_Icons"
+                          data-name="Final Icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 256 256"
+                        >
+                          <path
+                            d="M128,3.16A128,128,0,0,0,87.54,252.62c6.4,1.17,8.74-2.78,8.74-6.17,0-3-.11-11.09-.18-21.77C60.5,232.41,53,207.52,53,207.52c-5.82-14.79-14.22-18.72-14.22-18.72-11.62-7.94.88-7.78.88-7.78,12.85.9,19.61,13.19,19.61,13.19,11.42,19.56,30,13.91,37.25,10.63,1.16-8.27,4.47-13.91,8.13-17.11-28.43-3.23-58.31-14.21-58.31-63.26A49.49,49.49,0,0,1,59.51,90.12c-1.32-3.24-5.71-16.25,1.25-33.87,0,0,10.75-3.44,35.2,13.12a121.28,121.28,0,0,1,64.09,0c24.44-16.56,35.17-13.12,35.17-13.12,7,17.62,2.59,30.63,1.27,33.87a49.43,49.43,0,0,1,13.16,34.35c0,49.17-29.93,60-58.44,63.16,4.59,4,8.69,11.77,8.69,23.71,0,17.11-.16,30.91-.16,35.11,0,3.42,2.3,7.4,8.8,6.15A128,128,0,0,0,128,3.16Z"
+                            style="fill-rule: evenodd"
+                          />
+                        </svg>
+                      </i>
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+
+            <!-- <li class="project shadow" tabindex="0">
               <h3 class="proj-title">Single Page App</h3>
               <div class="content">
                 <div class="image-wrap desk">
@@ -455,7 +605,7 @@
                   </div>
                 </div>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </section>
@@ -496,7 +646,7 @@
         </div>
       </section>
       <footer class="foot" id="foot">
-        &copy; Akshay Mahajan 2022
+        &copy; Akshay Mahajan 2023
         <a href="#main">
           <span class="material-icons-round md-48"> north </span></a
         >

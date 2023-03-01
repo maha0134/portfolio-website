@@ -123,6 +123,45 @@ section {
     gap: 3rem;
   }
 }
+.portfolio {
+  .card-container {
+    .mobile {
+      display: none;
+    }
+    .web {
+      display: flex;
+    }
+  }
+  .card-container.show-mobile {
+    .web {
+      display: none;
+    }
+    .mobile {
+      display: flex;
+    }
+  }
+
+  .headings {
+    h3 {
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 0;
+      &:hover,
+      &:focus-visible {
+        color: $color-accent-hover;
+      }
+    }
+    h3.selected {
+      text-decoration: underline;
+      color: $color-accent;
+    }
+    @media only screen and (min-width: 45em) {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+}
 .contact {
   background-color: $color-background-light;
   .container-outer {
