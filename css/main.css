@@ -877,16 +877,16 @@ section:nth-child(3) {
 }
 
 .portfolio .card-container .mobile {
-  display: none;
+  display: flex;
 }
 .portfolio .card-container .web {
-  display: flex;
-}
-.portfolio .card-container.show-mobile .web {
   display: none;
 }
-.portfolio .card-container.show-mobile .mobile {
+.portfolio .card-container.show-web .web {
   display: flex;
+}
+.portfolio .card-container.show-web .mobile {
+  display: none;
 }
 .portfolio .headings {
   display: flex;

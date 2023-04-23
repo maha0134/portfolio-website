@@ -126,18 +126,18 @@ section {
 .portfolio {
   .card-container {
     .mobile {
-      display: none;
+      display: flex;
     }
     .web {
-      display: flex;
+      display: none;
     }
   }
-  .card-container.show-mobile {
+  .card-container.show-web {
     .web {
-      display: none;
+      display: flex;
     }
     .mobile {
-      display: flex;
+      display: none;
     }
   }
 

@@ -190,10 +190,10 @@ const APP = {
       if (clickedHeading.classList.contains("selected")) return;
       document.querySelector("h3.selected").classList.remove("selected");
       clickedHeading.classList.add("selected");
-      if (clickedHeading.id === "web") {
-        APP.list.classList.remove("show-mobile");
+      if (clickedHeading.id === "mobile") {
+        APP.list.classList.remove("show-web");
       } else {
-        APP.list.classList.add("show-mobile");
+        APP.list.classList.add("show-web");
       }
     }
   },
