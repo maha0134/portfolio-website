@@ -10,10 +10,10 @@ main {
   background-size: 100vw 100vh;
   background-repeat: round;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../../images/background-phone.png");
+    url("../../assets/images/background-phone.png");
   @media only screen and (min-width: 40em) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url("../../images/background.png");
+      url("../../assets/images/background.png");
   }
 }
 .blur {
@@ -126,18 +126,18 @@ section {
 .portfolio {
   .card-container {
     .mobile {
-      display: none;
+      display: flex;
     }
     .web {
-      display: flex;
+      display: none;
     }
   }
-  .card-container.show-mobile {
+  .card-container.show-web {
     .web {
-      display: none;
+      display: flex;
     }
     .mobile {
-      display: flex;
+      display: none;
     }
   }
 

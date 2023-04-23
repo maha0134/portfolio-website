@@ -753,11 +753,11 @@ main {
   background-position: center;
   background-size: 100vw 100vh;
   background-repeat: round;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background-phone.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/images/background-phone.png");
 }
 @media only screen and (min-width: 40em) {
   main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../images/background.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/images/background.png");
   }
 }
 
@@ -877,16 +877,16 @@ section:nth-child(3) {
 }
 
 .portfolio .card-container .mobile {
-  display: none;
+  display: flex;
 }
 .portfolio .card-container .web {
-  display: flex;
-}
-.portfolio .card-container.show-mobile .web {
   display: none;
 }
-.portfolio .card-container.show-mobile .mobile {
+.portfolio .card-container.show-web .web {
   display: flex;
+}
+.portfolio .card-container.show-web .mobile {
+  display: none;
 }
 .portfolio .headings {
   display: flex;
@@ -1007,6 +1007,9 @@ h4 {
 
 .portfolio .content {
   color: rgb(0, 251, 255);
+}
+.portfolio .accent {
+  color: rgb(246, 74, 128);
 }
 .portfolio .proj-title {
   color: hsl(0deg, 0%, 0%);
