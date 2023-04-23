@@ -1,6 +1,6 @@
 # Akshay Mahajan's portfolio
 
-![portfolio screenshot](/images/portfolio.png)
+![portfolio screenshot](assets/images/portfolio.png)
 Hello!
 
 - My name is Akshay and I love to solve problems.
